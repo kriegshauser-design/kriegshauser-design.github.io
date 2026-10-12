@@ -139,6 +139,54 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .dell-gallery{padding-top:0}
 @media(max-width:700px){.dell-project-copy{grid-template-columns:1fr}.dell-project-copy>div:first-child,.dell-desc{grid-column:auto}}
 
+
+/* Digital/Product portfolio galleries: consistent three-column image grid */
+.gallery.pad,
+.gallery.dell-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pad);
+}
+.gallery.pad > .item,
+.gallery.dell-gallery > .item,
+.gallery.pad > .item.full,
+.gallery.pad > .item.wide,
+.gallery.pad > .item.offset,
+.gallery.pad > .item.third,
+.gallery.dell-gallery > .item.full,
+.gallery.dell-gallery > .item.wide,
+.gallery.dell-gallery > .item.offset,
+.gallery.dell-gallery > .item.third {
+  grid-column: auto;
+  min-width: 0;
+  margin: 0;
+}
+.gallery.pad .media,
+.gallery.pad .item.full .media,
+.gallery.pad .item.wide .media,
+.gallery.pad .item.third .media,
+.gallery.dell-gallery .media,
+.gallery.dell-gallery .item.full .media,
+.gallery.dell-gallery .item.wide .media,
+.gallery.dell-gallery .item.third .media,
+.gallery.pad .item.tall .media {
+  aspect-ratio: 4 / 3;
+}
+.gallery.pad .media img,
+.gallery.pad .media video,
+.gallery.dell-gallery .media img,
+.gallery.dell-gallery .media video {
+  object-fit: contain;
+}
+@media (max-width: 800px) {
+  .gallery.pad,
+  .gallery.dell-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .gallery.pad,
+  .gallery.dell-gallery { grid-template-columns: minmax(0, 1fr); }
+}
+
 </style>
 </head>
 <body>
