@@ -86,6 +86,10 @@ footer{padding:calc(var(--pad)*2) var(--pad) calc(var(--pad) + env(safe-area-ins
 h2{font-size:14px;}
 .links{display:flex;flex-wrap:wrap;gap:8px 28px;}
 .fine{margin-top:calc(var(--pad)*2);display:flex;justify-content:space-between;font-size:14px;color:var(--mute)}
+
+/* Preserve complete image artwork throughout galleries; let each image determine its own height. */
+.media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
+.media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 </style>
 </head>
 <body>
