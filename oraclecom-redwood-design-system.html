@@ -198,6 +198,40 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 }
 
 
+/* Case-study layout: pair each image with its corresponding narrative. */
+.case-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);column-gap:clamp(28px,5vw,80px);row-gap:clamp(64px,10vw,144px);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);align-items:start}
+.case-meta{display:none}
+.case-gallery{display:contents}
+.case-gallery .item{grid-column:1;min-width:0;margin:0}
+.case-gallery .item:nth-child(1){grid-column:1;grid-row:1}
+.case-gallery .item:nth-child(2){grid-column:1;grid-row:2}
+.case-gallery .item:nth-child(3){grid-column:1;grid-row:3}
+.case-copy{grid-column:2;align-self:start}
+.case-copy.problem{grid-column:2;grid-row:1}
+.case-copy.approach{grid-column:2;grid-row:2}
+.case-copy.outcomes{grid-column:2;grid-row:3}
+.case-copy p{max-width:48ch}
+@media(max-width:800px){.case-layout{grid-template-columns:1fr;row-gap:calc(var(--pad)*3)}.case-gallery{display:contents}.case-gallery .item,.case-gallery .item:nth-child(n){grid-column:1;grid-row:auto}.case-copy,.case-copy.problem,.case-copy.approach,.case-copy.outcomes{grid-column:1;grid-row:auto}.case-meta{display:none}}
+
+.case-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:clamp(28px,5vw,80px);row-gap:var(--pad);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);align-items:start}
+.case-copy{min-width:0;grid-column:2}
+.case-meta{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-self:start}
+.case-meta dl{display:grid;gap:14px}.case-meta dt{color:var(--mute);font-size:13px}.case-meta dd{margin:0}
+.case-gallery{display:contents}
+.case-gallery .media{aspect-ratio:4/3;background:transparent}
+.case-gallery .media img,.case-gallery .media video{object-fit:contain}
+.case-gallery .item{grid-column:1;min-width:0;margin:0}
+.case-gallery .item:nth-child(1){grid-row:1}
+.case-gallery .item:nth-child(2){grid-row:2}
+.case-gallery .item:nth-child(3){grid-row:3}
+.case-copy.problem{grid-row:1}
+.case-copy.approach{grid-row:2}
+.case-copy.outcomes{grid-row:3}
+.case-copy p{max-width:62ch}
+.case-copy strong{font-weight:400}
+@media(max-width:800px){.case-layout{grid-template-columns:1fr;row-gap:var(--pad)}.case-meta,.case-copy{grid-column:1;grid-row:auto}.case-gallery{display:contents}.case-gallery .item,.case-gallery .item:nth-child(n){grid-column:1;grid-row:auto}.case-meta{order:-1}.case-copy{order:0}}
+@media(max-width:520px){.case-meta{grid-template-columns:1fr 1fr}}
+
 /* Preserve complete image artwork throughout galleries; let each image determine its own height. */
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
@@ -247,29 +281,36 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   <section class="title"><h1>Oracle.com &amp; Redwood Design System</h1></section>
 
   <!-- EDIT: facts + description -->
-  <section class="facts">
-    <dl><div><dt>Client</dt><dd>Oracle</dd></div><div><dt>Year</dt><dd>2018</dd></div><div><dt>Awards</dt><dd>AIGASF San Francisco Design Week Award?</dd></div></dl>
-    <dl><div><dt>Role</dt><dd>Associate Creative Director</dd></div><div><dt>Team</dt><dd>Crossfunctional Brand &amp; Software Design Groups</dd></div></dl>
-    <div class="desc">
-      <p>Collaborating closely with cross-disciplinary teams, including Program Management, Engineering, Test, and UX-Ops, I delivered user experiences that met desired outcomes. I aligned with the strategic objectives of marketing and product teams while continually evolving the Oracle Brand.</p>
-      <p>Key achievements include:</p>
-      <p>Design System: Drove the creation and widespread adoption of the Oracle.com design system, establishing a unified visual language for the platform.</p>
-      <p>Methodology Implementation: Led cross-functional teams to implement an agile framework, enhancing our ability to deliver experiences efficiently and enabling continuous improvement of Oracle.com.</p>
+  <section class="project-overview" aria-label="Project details">
+    <div class="overview-left">
+      <dl class="meta-block"><dt>Client</dt><dd>Oracle</dd></dl>
+      <dl class="meta-block"><dt>Year</dt><dd>2018</dd></dl>
+      <dl class="meta-block"><dt>Awards</dt><dd>AIGASF San Francisco Design Week Award?</dd></dl>
+    </div>
+    <div class="overview-right">
+      <dl class="meta-block"><dt>Role</dt><dd>Associate Creative Director</dd><dt>Team</dt><dd>Cross-functional Brand &amp; Software Design Groups</dd></dl>
     </div>
   </section>
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
-  <section class="gallery pad">
-      <figure class="item full"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="" loading="lazy"></div><figcaption><span>ORDS_01</span></figcaption></figure>
+  <section class="case-layout">
+    <section class="case-gallery" aria-label="Project images">
+      <figure class="item"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="" loading="lazy"></div><figcaption><span>ORDS_01</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_02</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>ORDS_03</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_04</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_05</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="" loading="lazy"></div><figcaption><span>ORDS_06</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_07</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>ORDS_03</span></figcaption></figure>
+    </section>
+    <div class="case-copy problem"><p><strong>Problem:</strong> Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p></div>
+    <div class="case-copy approach"><p><strong>Approach:</strong> As Associate Creative Director, I drove the creation of the Oracle.com Redwood design system and its broader adoption. I partnered with Program Management, Engineering, Test, UX-Ops, and brand and software design teams, while introducing an agile framework to help teams deliver and refine experiences more efficiently.</p></div>
+    <div class="case-copy outcomes"><p><strong>Outcomes:</strong> Established a unified visual language and a repeatable design foundation for Oracle.com. The design system and cross-functional working methods supported greater consistency across the platform and enabled continuous improvement as business and product needs evolved.</p></div>
+  </section>
+  <section class="gallery pad" aria-label="Additional design system work">
+      <figure class="item"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_04</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_05</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="" loading="lazy"></div><figcaption><span>ORDS_06</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_07</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="/images/2b652a67-90c3-4d8d-9a9d-3bb4fdf7e21e_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>ORDS_08</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_09</span></figcaption></figure>
-      <figure class="item full"><div class="media"><img src="/images/78ba6594-285c-4b37-90f1-1757642379f0_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_10</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/78ba6594-285c-4b37-90f1-1757642379f0_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>ORDS_10</span></figcaption></figure>
   </section>
 
   <!-- EDIT: next project link -->
