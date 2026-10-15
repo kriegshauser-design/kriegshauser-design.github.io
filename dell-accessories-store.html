@@ -58,8 +58,17 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 .js .item .media>*{transform:scale(1.18);transition:transform 1.6s var(--ease)}
 .js .item figcaption{opacity:0;transform:translateY(10px);transition:opacity .8s var(--ease) .35s,transform .8s var(--ease) .35s}
 .js .item.in .media{clip-path:inset(0)}.js .item.in .media>*{transform:none}.js .item.in figcaption{opacity:1;transform:none}
-.title{padding:calc(var(--pad)*7) var(--pad) calc(var(--pad)*2)}
+.title{min-height:clamp(320px,48vh,560px);display:flex;align-items:flex-end;padding:calc(var(--pad)*7) var(--pad) calc(var(--pad)*2)}
 .title h1{max-width:16ch;font-size:clamp(2.4rem,7vw,7rem);line-height:.98;letter-spacing:-.035em;animation:rise 1.1s var(--ease) both}
+.project-overview{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);padding:calc(var(--pad)*2) var(--pad) calc(var(--pad)*5);border-top:1px solid var(--line);min-height:clamp(420px,48vh,680px);align-content:start}
+.project-overview .overview-left{display:grid;grid-template-columns:1fr;gap:0}
+.project-overview .overview-right{display:grid;grid-template-columns:1fr;gap:0}
+.project-overview dl{display:grid;gap:14px;align-content:start}
+.project-overview .meta-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.project-overview dt{color:var(--mute);font-size:13px}
+.project-overview dd{margin:0}
+.project-overview .meta-block+.meta-block{margin-top:calc(var(--pad)*2)}
+@media(max-width:700px){.title{min-height:40svh}.project-overview{grid-template-columns:1fr;min-height:0;gap:calc(var(--pad)*2);padding-bottom:calc(var(--pad)*3)}}
 .case-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:clamp(28px,5vw,80px);row-gap:var(--pad);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);border-top:1px solid var(--line);align-items:start}
 .case-copy{min-width:0;grid-column:2}
 .case-meta{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-self:start}
@@ -116,6 +125,16 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 </header>
 <main id="top">
   <section class="title"><h1>Dell.com Software and Accessories<br>Shopping Experience</h1></section>
+  <section class="project-overview" aria-label="Project details">
+    <div class="overview-left">
+      <dl class="meta-block"><dt>Client</dt><dd>Dell</dd></dl>
+      <dl class="meta-block"><dt>Year</dt><dd>2017</dd></dl>
+    </div>
+    <div class="overview-right">
+      <dl class="meta-block"><dt>Role</dt><dd>Creative Lead</dd></dl>
+      <dl class="meta-block"><dt>Team</dt><dd>Lori McDaniels — UX Design<br>Michelle Hazen — Content Strategy</dd></dl>
+    </div>
+  </section>
   <section class="case-layout">
     <section class="case-gallery" aria-label="Project images">
       <figure class="item"><div class="media"><img src="/images/12b67a25-79bd-4a32-a2c3-f8a473fd4169_rw_3840.png" alt="Dell software and accessories shopping experience" loading="lazy"></div></figure>
