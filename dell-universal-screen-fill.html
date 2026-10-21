@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- EDIT: title + description -->
+<title>Dell Universal Screen Fill & Wallpaper Strategy — Michael Kriegshauser</title>
+<meta name="description" content="Dell Universal Screen Fill & Wallpaper Strategy case study by Michael Kriegshauser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fcfaf7; --ink:#1c1e1e; --mute:rgba(28,30,30,.55); --line:rgba(28,30,30,.16);
+  --pad:clamp(16px,2.2vw,32px);
+  --ease:cubic-bezier(.16,.84,.24,1);
+  color-scheme:light;
+  font-family:"Questrial",Helvetica,Arial,sans-serif;font-synthesis:none;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+*{margin:0}
+html,body{background:var(--bg)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{color:var(--ink);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+h1,h2,h3,button{font-weight:400;font:inherit}
+a{color:inherit;text-decoration:none}
+button{background:none;border:0;color:inherit;cursor:pointer;padding:0}
+a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 14px}
+.nav{display:flex;gap:clamp(16px,3vw,48px);justify-content:flex-end;align-items:start}
+.dd{position:relative}
+.dd>button{display:inline-flex;align-items:center;gap:6px}
+.dd>button::after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}
+.dd.open>button::after{transform:translateY(1px) rotate(-135deg)}
+.panel{position:absolute;right:0;top:calc(100% + 14px);min-width:240px;background:var(--bg);border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s .25s;max-height:70svh;overflow:auto}
+.dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
+.panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}
+.panel a span{color:var(--mute)}
+.panel a:hover{background:rgba(28,30,30,.05)}
+@media (hover:hover) and (min-width:701px){.dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}}
+@media(max-width:700px){.nav{flex-wrap:wrap;gap:8px 18px}.dd{position:static}.panel{left:var(--pad);right:var(--pad);top:100%;min-width:0}}
+.intro{min-height:88svh;display:flex;align-items:flex-end;padding:calc(var(--pad)*6) var(--pad) calc(var(--pad)*2)}
+.intro h1{max-width:20ch;font-size:clamp(2rem,5.6vw,5.5rem);line-height:1.02;letter-spacing:-.03em;animation:rise 1.1s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.project{padding:calc(var(--pad)*2) var(--pad) calc(var(--pad)*3);border-top:1px solid var(--line)}
+.head{display:grid;grid-template-columns:1fr 1fr 2fr;gap:16px;margin-bottom:calc(var(--pad)*2)}
+.head h2{letter-spacing:-.01em}.head .tags{color:var(--mute)}.head p{max-width:62ch}
+@media(max-width:700px){.head{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad)}
+.item{grid-column:span 6;margin:0}.item.wide{grid-column:span 12}.item.third{grid-column:span 4}
+@media(max-width:700px){.item,.item.third{grid-column:span 12}}
+.media{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--c,#e7e3dc)}
+.item.wide .media{aspect-ratio:16/9}.item.third .media{aspect-ratio:3/4}
+.media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.item figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:13px}
+.js .item .media{clip-path:inset(100% 0 0 0);transition:clip-path 1.2s var(--ease)}
+.js .item .media>*{transform:scale(1.18);transition:transform 1.6s var(--ease)}
+.js .item figcaption{opacity:0;transform:translateY(10px);transition:opacity .8s var(--ease) .35s,transform .8s var(--ease) .35s}
+.js .item.in .media{clip-path:inset(0)}.js .item.in .media>*{transform:none}.js .item.in figcaption{opacity:1;transform:none}
+.title{min-height:clamp(320px,48vh,560px);display:flex;align-items:flex-end;padding:calc(var(--pad)*7) var(--pad) calc(var(--pad)*2)}
+.title h1{max-width:16ch;font-size:clamp(2.4rem,7vw,7rem);line-height:.98;letter-spacing:-.035em;animation:rise 1.1s var(--ease) both}
+.project-overview{display:grid;grid-template-columns:1fr 3fr;gap:clamp(24px,4vw,64px);width:100%;margin:0;padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*2);min-height:0;align-content:start;border-top:1px solid var(--line)}
+.project-overview .overview-left{display:grid;grid-template-columns:1fr;gap:calc(var(--pad)*2);align-content:start;text-align:left;justify-items:start}
+.project-overview .overview-right{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-content:start;text-align:left;justify-items:start}
+.project-overview dl{display:grid;gap:5px;align-content:start;text-align:left;justify-items:start}
+.project-overview .meta-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.project-overview dt{color:var(--mute);font-size:13px}
+.project-overview dd{margin:0}
+.project-overview .meta-block+.meta-block{margin-top:0}
+@media(max-width:700px){.title{min-height:40svh}.project-overview{width:auto;margin:0;grid-template-columns:1fr 2fr;min-height:0;gap:calc(var(--pad)*2);padding:calc(var(--pad)*1.5) var(--pad) calc(var(--pad)*2)}.project-overview .overview-right{grid-template-columns:1fr}}
+/* Dell case-study layout: each image pairs with its corresponding narrative block. */
+.case-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);column-gap:clamp(28px,5vw,80px);row-gap:clamp(64px,10vw,144px);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);align-items:start}
+.case-meta{display:none}
+.case-gallery{display:contents}
+.case-gallery .item{grid-column:1;min-width:0;margin:0}
+.case-gallery .item:nth-child(1){grid-column:1;grid-row:1}
+.case-gallery .item:nth-child(2){grid-column:1;grid-row:2}
+.case-gallery .item:nth-child(3){grid-column:1;grid-row:3}
+.case-copy{grid-column:2;align-self:start}
+.case-copy.problem{grid-column:2;grid-row:1}
+.case-copy.approach{grid-column:2;grid-row:2}
+.case-copy.outcomes{grid-column:2;grid-row:3}
+.case-copy p{max-width:48ch}
+@media(max-width:800px){.case-layout{grid-template-columns:1fr;row-gap:calc(var(--pad)*3)}.case-gallery{display:contents}.case-gallery .item,.case-gallery .item:nth-child(n){grid-column:1;grid-row:auto}.case-copy,.case-copy.problem,.case-copy.approach,.case-copy.outcomes{grid-column:1;grid-row:auto}.case-meta{display:none}}
+
+.case-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:clamp(28px,5vw,80px);row-gap:var(--pad);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);align-items:start}
+.case-copy{min-width:0;grid-column:2}
+.case-meta{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-self:start}
+.case-meta dl{display:grid;gap:14px}.case-meta dt{color:var(--mute);font-size:13px}.case-meta dd{margin:0}
+.case-gallery{display:contents}
+.case-gallery .media{aspect-ratio:4/3;background:transparent}
+.case-gallery .media img,.case-gallery .media video{object-fit:contain}
+.case-gallery .item{grid-column:1;min-width:0;margin:0}
+.case-gallery .item:nth-child(1){grid-row:1}
+.case-gallery .item:nth-child(2){grid-row:2}
+.case-gallery .item:nth-child(3){grid-row:3}
+.case-copy.problem{grid-row:1}
+.case-copy.approach{grid-row:2}
+.case-copy.outcomes{grid-row:3}
+.case-copy p{max-width:62ch}
+.case-copy strong{font-weight:400}
+@media(max-width:800px){.case-layout{grid-template-columns:1fr;row-gap:var(--pad)}.case-meta,.case-copy{grid-column:1;grid-row:auto}.case-gallery{display:contents}.case-gallery .item,.case-gallery .item:nth-child(n){grid-column:1;grid-row:auto}.case-meta{order:-1}.case-copy{order:0}}
+@media(max-width:520px){.case-meta{grid-template-columns:1fr 1fr}}
+.quote{grid-column:span 12;padding:calc(var(--pad)*2) 0;max-width:30ch;font-size:clamp(1.4rem,3vw,3rem);line-height:1.1;letter-spacing:-.025em}
+.js .quote{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}.js .quote.in{opacity:1;transform:none}
+.next{display:block;padding:calc(var(--pad)*2) var(--pad) calc(var(--pad)*3);border-top:1px solid var(--line)}
+.next small{display:block;color:var(--mute);font-size:13px;margin-bottom:12px}
+.next span{display:block;font-size:clamp(2rem,7vw,7rem);line-height:1;letter-spacing:-.035em;transition:transform .5s var(--ease)}
+.next:hover span{transform:translateX(16px)}
+footer{padding:calc(var(--pad)*3) var(--pad) var(--pad);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 2fr;gap:16px}
+footer .links{display:flex;flex-direction:column}footer a:hover{color:var(--mute)}
+footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);display:flex;justify-content:space-between;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(max-width:700px){footer{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}}
+/* Digital/Product portfolio galleries: consistent three-column image grid */
+.gallery.pad,.gallery.dell-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--pad)}
+.gallery.pad>.item,.gallery.dell-gallery>.item,.gallery.pad>.item.full,.gallery.pad>.item.wide,.gallery.pad>.item.offset,.gallery.pad>.item.third,.gallery.dell-gallery>.item.full,.gallery.dell-gallery>.item.wide,.gallery.dell-gallery>.item.offset,.gallery.dell-gallery>.item.third{grid-column:auto;min-width:0;margin:0}
+.gallery.pad .media,.gallery.pad .item.full .media,.gallery.pad .item.wide .media,.gallery.pad .item.third .media,.gallery.dell-gallery .media,.gallery.dell-gallery .item.full .media,.gallery.dell-gallery .item.wide .media,.gallery.dell-gallery .item.third .media,.gallery.pad .item.tall .media{aspect-ratio:4/3}
+.gallery.pad .media img,.gallery.pad .media video,.gallery.dell-gallery .media img,.gallery.dell-gallery .media video{object-fit:contain}
+@media(max-width:800px){.gallery.pad,.gallery.dell-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.gallery.pad,.gallery.dell-gallery{grid-template-columns:minmax(0,1fr)}}
+
+/* Preserve complete image artwork throughout galleries; let each image determine its own height. */
+.media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
+.media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a href="index.html">Michael Kriegshauser</a>
+  <nav class="nav" aria-label="Main">
+    <div class="dd"><button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button><div class="panel">
+      <a href="quantum-brand-evolution.html">Quantum Brand Evolution <span>IBM</span></a><a href="ibm-quantum-summit.html">Quantum Summit <span>IBM</span></a><a href="hbcu-quantum-center-at-howard-university.html">HBCU Quantum Center <span>Howard</span></a><a href="ibm-quantum-visual-identity.html">Quantum Visual Identity <span>IBM</span></a><a href="ibm-systems-design-summit.html">Design Summit <span>IBM</span></a><a href="ibm-quantum-system-two.html">Quantum System Two <span>IBM</span></a>
+    </div></div>
+    <div class="dd"><button aria-expanded="false" aria-haspopup="true">Digital/Product</button><div class="panel">
+      <a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System <span>Oracle</span></a><a href="dell-technologies.html">Dell Technologies <span>Dell</span></a><a href="dell-accessories-store.html">Dell Accessories Store <span>Dell</span></a>
+        <a href="dell-universal-screen-fill.html">Universal Screen Fill <span>Dell</span></a>
+        <a href="windows-dell-shop-app.html">Windows Dell Shop App <span>Dell</span></a>
+        <a href="dell-channel-sales-app.html">Dell Channel Sales App <span>Dell</span></a>
+    </div></div>
+    <div class="dd"><button aria-expanded="false" aria-haspopup="true">Experiencial/Direction</button><div class="panel">
+      <a href="Events-Places.html">Places and Events</a><a href="video-creative-direction.html">Video</a><a href="ibm-quantum-hardware-creative-direction.html">Quantum Hardware <span>IBM</span></a><a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One <span>Cleveland Clinic</span></a>
+    </div></div>
+    <a href="Info.html">Info</a>
+  </nav>
+</header>
+<main id="top">
+  <section class="title"><h1>Dell Universal Screen Fill & Wallpaper Strategy</h1></section>
+  <section class="project-overview" aria-label="Project details">
+    <div class="overview-left">
+      <dl class="meta-block"><dt>Client</dt><dd>Dell Technologies</dd></dl>
+      <dl class="meta-block"><dt>Year</dt><dd>2015–2019</dd></dl>
+    </div>
+    <div class="overview-right">
+      <dl class="meta-block"><dt>Role</dt><dd>Associate Experience Director</dd><dt>Team</dt><dd>Dell brand, marketing, and product teams</dd></dl>
+    </div>
+  </section>
+  <section class="case-layout">
+    <section class="case-gallery" aria-label="Dell Universal Screen Fill & Wallpaper Strategy images">
+      <figure class="item"><div class="media"><img src="/images/6f21ce89-4e71-420d-863b-be653e237bce_rw_3840.png" alt="DSA_01" loading="lazy"></div><figcaption><span>DSA_01</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/f7dff34f-b48a-4502-af15-223a76ba0adc_rw_1200.jpg" alt="WDS_03" loading="lazy"></div><figcaption><span>DSA_02</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/ca65d1b5-1555-4b66-bb75-2f32bb6963d8_rw_1200.gif" alt="WDS_04" loading="lazy"></div><figcaption><span>DSA_03</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/36d1a735-13a4-4e32-95a1-23f09e2f7996_rw_1920.jpg" alt="DCS_02" loading="lazy"></div><figcaption><span>DSA_04</span></figcaption></figure>
+    </section>
+    <div class="case-copy problem"><p><strong>Problem:</strong> Wallpapers and screen fills varied across Dell products, marketing, and e-commerce. Without a shared creative strategy, teams duplicated effort, increased production costs, and created an inconsistent customer experience.</p></div>
+    <div class="case-copy approach"><p><strong>Approach:</strong> Developed a universal screen-fill and wallpaper strategy grounded in usability research. Aligned internal teams around a clear creative direction and connected the wallpapers installed on Dell systems with screen fills used across marketing and e-commerce touchpoints.</p></div>
+    <div class="case-copy outcomes"><p><strong>Outcomes:</strong> Created a more consistent visual experience across Dell products and customer touchpoints, reduced friction between business units, and established a scalable approach for using product imagery to strengthen brand presence.</p></div>
+  </section>
+  <a class="next" href="windows-dell-shop-app.html"><small>Next project</small><span>Windows Dell Shop App</span></a>
+</main>
+<footer id="contact">
+  <div class="links"><a href="https://www.linkedin.com/in/heykriegs">LinkedIn</a><a href="https://www.instagram.com/heykriegs/">Instagram</a></div>
+  <div class="links"><a href="mailto:Heykriegs@gmail.com">Heykriegs@gmail.com</a></div>
+  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top</a></div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+(function(){var dds=[].slice.call(document.querySelectorAll('.dd'));function closeAll(except){dds.forEach(function(d){if(d!==except){d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false')}})}dds.forEach(function(d){var b=d.querySelector('button');b.addEventListener('click',function(e){e.stopPropagation();closeAll(d);var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o)});d.querySelectorAll('.panel a').forEach(function(a){a.addEventListener('click',function(){closeAll()})})});document.addEventListener('click',function(){closeAll()});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()})})();
+(function(){var items=[].slice.call(document.querySelectorAll('.item,.quote'));if(!('IntersectionObserver' in window)){items.forEach(function(i){i.classList.add('in')});return}var io=new IntersectionObserver(function(entries){var batch=entries.filter(function(e){return e.isIntersecting});batch.forEach(function(e,n){var el=e.target;setTimeout(function(){el.classList.add('in')},n*140);io.unobserve(el)})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});items.forEach(function(i){io.observe(i)})})();
+</script>
+</body>
+</html>
