@@ -5,151 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- EDIT: title + description -->
 <title>Oracle.com Redwood Design System — Layout Trial — Michael Kriegshauser</title>
-<meta name="description" content="Experimental editorial layout for the Oracle.com Redwood Design System case study by Michael Kriegshauser.">
+<meta name="description" content="Oracle.com Redwood Design System case study by Michael Kriegshauser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#fcfaf7; --ink:#1c1e1e; --mute:rgba(28,30,30,.55); --line:rgba(28,30,30,.16);
-  --pad:clamp(16px,2.2vw,32px);
-  --ease:cubic-bezier(.16,.84,.24,1);
-  color-scheme:light;
-  font-family:"Questrial",Helvetica,Arial,sans-serif;font-synthesis:none;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
-}
-*,*::before,*::after{box-sizing:inherit}
-*{margin:0}
-html,body{background:var(--bg)}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
-body{color:var(--ink);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
-h1,h2,h3,button{font-weight:400;font:inherit}
-a{color:inherit;text-decoration:none}
-button{background:none;border:0;color:inherit;cursor:pointer;padding:0}
-a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
-
-/* ---------- header ---------- */
-.bar{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);
-  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;
-  padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 14px}
-.nav{display:flex;gap:clamp(16px,3vw,48px);justify-content:flex-end;align-items:start}
-.dd{position:relative}
-.dd>button{display:inline-flex;align-items:center;gap:6px}
-.dd>button::after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1px 1px 0;
-  transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}
-.dd.open>button::after{transform:translateY(1px) rotate(-135deg)}
-.panel{position:absolute;right:0;top:calc(100% + 14px);min-width:240px;background:var(--bg);
-  border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-6px);
-  transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s .25s}
-.dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
-.panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}
-.panel{max-height:70svh;overflow:auto}
-.panel a span{color:var(--mute)}
-.panel a:hover{background:rgba(28,30,30,.05)}
-@media (hover:hover) and (min-width:701px){
-  .dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
-  .dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}
-}
-@media(max-width:700px){
-  .nav{flex-wrap:wrap;gap:8px 18px}
-  .dd{position:static}
-  .panel{left:var(--pad);right:var(--pad);top:100%;min-width:0}
-}
-
-/* ---------- intro ---------- */
-.intro{min-height:88svh;display:flex;align-items:flex-end;padding:calc(var(--pad)*6) var(--pad) calc(var(--pad)*2)}
-.intro h1{max-width:20ch;font-size:clamp(2rem,5.6vw,5.5rem);line-height:1.02;letter-spacing:-.03em}
-.intro h1{}
-
-/* ---------- projects ---------- */
-.project{padding:calc(var(--pad)*2) var(--pad) calc(var(--pad)*3);border-top:1px solid var(--line)}
-.head{display:grid;grid-template-columns:1fr 1fr 2fr;gap:16px;margin-bottom:calc(var(--pad)*2)}
-.head h2{letter-spacing:-.01em}
-.head .tags{color:var(--mute)}
-.head p{max-width:62ch}
-@media(max-width:700px){.head{grid-template-columns:1fr}}
-
-.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad)}
-.item{grid-column:span 6;margin:0}
-.item.wide{grid-column:span 12}
-.item.third{grid-column:span 4}
-@media(max-width:700px){.item,.item.third{grid-column:span 12}}
-.media{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--c,#e7e3dc)}
-.item.wide .media{aspect-ratio:16/9}
-.item.third .media{aspect-ratio:3/4}
-.media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.item figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:13px}
-
-/* ---------- project page ---------- */
-.title{min-height:clamp(320px,48vh,560px);display:flex;align-items:flex-end;padding:calc(var(--pad)*7) var(--pad) calc(var(--pad)*2)}
-.title h1{max-width:16ch;font-size:clamp(2.4rem,7vw,7rem);line-height:.98;letter-spacing:-.035em;}
-.project-overview{display:grid;grid-template-columns:1fr 3fr;gap:clamp(24px,4vw,64px);width:100%;margin:0;padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*2);min-height:0;align-content:start;border-top:1px solid var(--line)}
-.project-overview .overview-left{display:grid;grid-template-columns:1fr;gap:calc(var(--pad)*2);align-content:start;text-align:left;justify-items:start}
-.project-overview .overview-right{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-content:start;text-align:left;justify-items:start}
-.project-overview dl{display:grid;gap:5px;align-content:start;text-align:left;justify-items:start}
-.project-overview .meta-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.project-overview dt{color:var(--mute);font-size:13px}
-.project-overview dd{margin:0}
-.project-overview .meta-block+.meta-block{margin-top:0}
-@media(max-width:700px){.title{min-height:40svh}.project-overview{width:auto;margin:0;grid-template-columns:1fr 2fr;min-height:0;gap:calc(var(--pad)*2);padding:calc(var(--pad)*1.5) var(--pad) calc(var(--pad)*2)}.project-overview .overview-right{grid-template-columns:1fr}}
-
-.case-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);column-gap:clamp(28px,5vw,80px);row-gap:clamp(64px,10vw,144px);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);align-items:start}
-.case-meta{display:none}
-.case-gallery{display:contents}
-.case-gallery .item{grid-column:1;min-width:0;margin:0}
-.case-gallery .item:nth-child(1){grid-column:1;grid-row:1}
-.case-gallery .item:nth-child(2){grid-column:1;grid-row:2}
-.case-gallery .item:nth-child(3){grid-column:1;grid-row:3}
-.case-copy{grid-column:2;align-self:start}
-.case-copy.problem{grid-column:2;grid-row:1}
-.case-copy.approach{grid-column:2;grid-row:2}
-.case-copy.outcomes{grid-column:2;grid-row:3}
-.case-copy p{max-width:48ch}
-@media(max-width:800px){.case-layout{grid-template-columns:1fr;row-gap:calc(var(--pad)*3)}.case-gallery{display:contents}.case-gallery .item,.case-gallery .item:nth-child(n){grid-column:1;grid-row:auto}.case-copy,.case-copy.problem,.case-copy.approach,.case-copy.outcomes{grid-column:1;grid-row:auto}.case-meta{display:none}}
-
-.case-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:clamp(28px,5vw,80px);row-gap:var(--pad);padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);align-items:start}
-.case-copy{min-width:0;grid-column:2}
-.case-meta{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-self:start}
-.case-meta dl{display:grid;gap:14px}.case-meta dt{color:var(--mute);font-size:13px}.case-meta dd{margin:0}
-.case-gallery{display:contents}
-.case-gallery .media{aspect-ratio:4/3;background:transparent}
-.case-gallery .media img,.case-gallery .media video{object-fit:contain}
-.case-gallery .item{grid-column:1;min-width:0;margin:0}
-.case-gallery .item:nth-child(1){grid-row:1}
-.case-gallery .item:nth-child(2){grid-row:2}
-.case-gallery .item:nth-child(3){grid-row:3}
-.case-copy.problem{grid-row:1}
-.case-copy.approach{grid-row:2}
-.case-copy.outcomes{grid-row:3}
-.case-copy p{max-width:62ch}
-.case-copy strong{font-weight:400}
-@media(max-width:800px){.case-layout{grid-template-columns:1fr;row-gap:var(--pad)}.case-meta,.case-copy{grid-column:1;grid-row:auto}.case-gallery{display:contents}.case-gallery .item,.case-gallery .item:nth-child(n){grid-column:1;grid-row:auto}.case-meta{order:-1}.case-copy{order:0}}
-@media(max-width:520px){.case-meta{grid-template-columns:1fr 1fr}}
-
-/* Preserve complete image artwork throughout galleries; let each image determine its own height. */
-.media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
-.media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
-
-/* Trial case-study layout inspired by the reference: editorial intro, alternating copy and image groups. */
-.project-intro{display:grid;grid-template-columns:minmax(110px,1fr) minmax(0,2.2fr) minmax(150px,1fr);gap:clamp(20px,3.5vw,56px);padding:clamp(36px,5vw,76px) var(--pad) clamp(52px,7vw,104px);align-items:start}
-.project-intro-copy{font-size:clamp(18px,2vw,26px);line-height:1.35;letter-spacing:-.015em}
-.project-intro-copy p+p{margin-top:1.1em}
-.section-label{color:var(--mute);font-size:13px}
-.project-intro-copy{display:grid;gap:1em;max-width:65ch}
-.project-credits{display:grid;gap:18px;align-content:start}
-.project-credits dl{display:grid;gap:4px}
-.project-credits dt{color:var(--mute);font-size:13px}
-.project-credits dd{margin:0}
-.story-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(8px,1vw,16px);row-gap:clamp(10px,1.2vw,18px);padding:0 var(--pad) calc(var(--pad)*3);align-items:start}
-.story-gallery .item{grid-column:span 6;min-width:0;margin:0}
-.story-gallery .item.wide{grid-column:1 / -1}
-.story-gallery .item.half{grid-column:span 6}
-.story-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
-.story-gallery .media img{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important}
-.story-gallery figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:13px}
-.story-text{grid-column:1 / -1;display:grid;grid-template-columns:1fr 2fr 1fr;gap:clamp(24px,4vw,64px);padding:calc(var(--pad)*2) 0;align-items:start}
-.story-text p{grid-column:2;max-width:65ch;text-align:left}
-@media(max-width:700px){.project-intro{grid-template-columns:1fr;gap:20px;padding:36px var(--pad) 52px}.project-intro-copy{font-size:clamp(18px,5vw,22px)}.project-credits{grid-template-columns:1fr 1fr;gap:16px}.project-credits .section-label{grid-column:1/-1}.story-gallery{gap:10px}.story-gallery .item.half{grid-column:span 6}.story-text{grid-template-columns:1fr;gap:12px;padding:var(--pad) 0}.story-text p{grid-column:1}.story-gallery .item.wide{grid-column:1/-1}}
+:root{--bg:#fcfaf7;--ink:#1c1e1e;--mute:rgba(28,30,30,.55);--line:rgba(28,30,30,.16);--pad:clamp(16px,2.2vw,32px);--ease:cubic-bezier(.16,.84,.24,1);color-scheme:light;font-family:"Questrial",Helvetica,Arial,sans-serif;font-synthesis:none;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}*{margin:0}html,body{background:var(--bg)}html{scroll-behavior:smooth;scroll-padding-top:72px}body{color:var(--ink);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}h1,h2,h3,button{font-weight:400;font:inherit}a{color:inherit;text-decoration:none}button{background:none;border:0;color:inherit;cursor:pointer;padding:0}a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 14px}
+.nav{display:flex;gap:clamp(16px,3vw,48px);justify-content:flex-end;align-items:start}.dd{position:relative}.dd>button{display:inline-flex;align-items:center;gap:6px}.dd>button::after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}.dd.open>button::after{transform:translateY(1px) rotate(-135deg)}
+.panel{position:absolute;right:0;top:calc(100% + 14px);min-width:240px;background:var(--bg);border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s .25s;max-height:70svh;overflow:auto}.dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}.panel a:hover{background:rgba(28,30,30,.05)}
+@media(hover:hover) and (min-width:701px){.dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}}
+@media(max-width:700px){.nav{flex-wrap:wrap;gap:8px 18px}.dd{position:static}.panel{left:var(--pad);right:var(--pad);top:100%;min-width:0}}
+.case-heading{padding:clamp(170px,26vw,330px) var(--pad) clamp(28px,4vw,58px);display:grid;gap:clamp(18px,3vw,38px)}.case-categories{display:flex;gap:10px;color:var(--mute);font-size:clamp(13px,1.2vw,16px)}.case-heading h1{font-size:clamp(3.3rem,11.2vw,12.5rem);line-height:.84;letter-spacing:-.065em;max-width:12ch}
+.case-hero{padding:0 var(--pad)}.case-image{margin:0;min-width:0}.case-image .media{width:100%;overflow:visible;background:transparent}.case-image img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}.case-image figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:12px}
+.case-information{display:grid;grid-template-columns:minmax(100px,.8fr) minmax(0,2fr) minmax(150px,.9fr);gap:clamp(20px,4vw,64px);padding:clamp(48px,8vw,120px) var(--pad) clamp(58px,9vw,132px);align-items:start}.info-label{font-size:13px;color:var(--mute)}.info-copy{font-size:clamp(18px,2.1vw,27px);line-height:1.34;letter-spacing:-.02em;max-width:42ch}.info-copy p+p{margin-top:1em}.case-credits{display:grid;gap:clamp(18px,2vw,28px)}.case-credits dl{display:grid;gap:4px}.case-credits dt{font-size:13px;color:var(--mute)}.case-credits dd{margin:0}
+.case-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(8px,1.2vw,18px);row-gap:clamp(18px,2vw,30px);padding:0 var(--pad) clamp(80px,12vw,170px)}.case-gallery .case-image{grid-column:span 6}.case-gallery .case-image.wide-image{grid-column:1/-1}.case-gallery .case-image.pair-image{grid-column:span 6}
+.other-projects{border-top:1px solid var(--line);padding:clamp(38px,6vw,84px) var(--pad) clamp(70px,10vw,140px)}.other-projects h2{font-size:clamp(2rem,5vw,5rem);letter-spacing:-.045em;margin-bottom:clamp(24px,4vw,52px)}.other-project-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,28px)}.other-project-links a{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:12px}.other-project-links a span{font-size:12px;color:var(--mute)}.other-project-links strong{font-weight:400;font-size:clamp(18px,2.2vw,28px);letter-spacing:-.02em}.other-project-links a span:last-child{margin-top:12px}
+footer{background:var(--bg);padding:clamp(40px,6vw,84px) var(--pad) 20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px)}footer .links{display:flex;gap:18px;flex-wrap:wrap}footer .fine{grid-column:1/-1;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;color:var(--mute);font-size:12px}
+.menu-toggle{display:none}
+@media(max-width:700px){.case-heading{padding-top:160px}.case-heading h1{font-size:clamp(3.3rem,16vw,7rem)}.case-information{grid-template-columns:1fr;gap:18px;padding:52px var(--pad) 64px}.info-copy{font-size:clamp(19px,5vw,23px)}.case-credits{grid-template-columns:1fr 1fr;gap:18px}.case-credits .info-label{grid-column:1/-1}.case-gallery{gap:12px}.case-gallery .case-image.pair-image{grid-column:span 6}.other-project-links{grid-template-columns:1fr}.other-project-links a{padding:14px 0}.other-projects h2{margin-bottom:24px}footer{grid-template-columns:1fr;gap:22px}footer .fine{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -195,34 +70,24 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 </header>
 
 <main id="top">
-  <!-- EDIT: project title -->
-  <section class="title"><h1>Oracle.com Redwood Design System <span style="font-size:.35em;letter-spacing:0;vertical-align:middle;">/ Layout Trial</span></h1></section>
-
-  <!-- EDIT: facts + description -->
-  <section class="project-overview" aria-label="Project details">
-    <div class="overview-left">
-      <dl class="meta-block"><dt>Client</dt><dd>Oracle</dd></dl>
-      <dl class="meta-block"><dt>Year</dt><dd>2018</dd></dl>
-    </div>
-    <div class="overview-right">
-      <dl class="meta-block"><dt>Role</dt><dd>Associate Creative Director</dd><dt>Team</dt><dd>Cross-functional Brand &amp; Software Design Groups</dd></dl>
-    </div>
+  <section class="case-heading">
+    <div class="case-categories"><span>Digital</span><span>/</span><span>Web Design</span></div>
+    <h1>Oracle.com &amp; Redwood Design System</h1>
   </section>
 
-  <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
+  <section class="case-hero" aria-label="Project hero image">
+    <figure class="case-image hero-image"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt=""></div><figcaption><span>ORDS_01</span></figcaption></figure>
+  </section>
 
-
-  <section class="story-gallery" aria-label="Project imagery and details">
-    <figure class="item wide"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>ORDS_01</span></figcaption></figure>
-
-  <section class="project-intro" aria-label="About the project">
-    <div class="section-label">/ About the project</div>
-    <div class="project-intro-copy">
+  <section class="case-information" aria-label="About the project and credits">
+    <div class="info-label">/ About the project</div>
+    <div class="info-copy">
       <p>Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p>
       <p>As Associate Creative Director, I drove the creation of the Oracle.com Redwood design system and its broader adoption. I partnered with Program Management, Engineering, Test, UX-Ops, and brand and software design teams, while introducing an agile framework to help teams deliver and refine experiences more efficiently.</p>
+      <p>Established a unified visual language and a repeatable design foundation for Oracle.com. The design system and cross-functional working methods supported greater consistency across the platform and enabled continuous improvement as business and product needs evolved.</p>
     </div>
-    <div class="project-credits">
-      <div class="section-label">/ Credits</div>
+    <div class="case-credits">
+      <div class="info-label">/ Credits</div>
       <dl><dt>Client</dt><dd>Oracle</dd></dl>
       <dl><dt>Role</dt><dd>Associate Creative Director</dd></dl>
       <dl><dt>Team</dt><dd>Cross-functional Brand &amp; Software Design Groups</dd></dl>
@@ -230,24 +95,24 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
     </div>
   </section>
 
-    <figure class="item half"><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="" decoding="async"></div><figcaption><span>ORDS_02</span></figcaption></figure>
-    <figure class="item half"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="" decoding="async"></div><figcaption><span>ORDS_03</span></figcaption></figure>
-
-    <figure class="item wide"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="" decoding="async"></div><figcaption><span>ORDS_04</span></figcaption></figure>
-    <figure class="item half"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="" decoding="async"></div><figcaption><span>ORDS_05</span></figcaption></figure>
-    <figure class="item half"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="" decoding="async"></div><figcaption><span>ORDS_06</span></figcaption></figure>
-
-    <section class="story-text">
-      <div class="section-label">/ The outcome</div>
-      <p>The result was a shared design foundation for Oracle.com, helping teams create more consistent experiences and continue improving the platform as business and product needs evolved.</p>
-    </section>
-
-    <figure class="item wide"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="" decoding="async"></div><figcaption><span>ORDS_07</span></figcaption></figure>
-    <figure class="item wide"><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt="" decoding="async"></div><figcaption><span>ORDS_09</span></figcaption></figure>
+  <section class="case-gallery" aria-label="Project imagery">
+    <figure class="case-image wide-image "><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt=""></div><figcaption><span>ORDS_02</span></figcaption></figure>
+    <figure class="case-image pair-image "><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt=""></div><figcaption><span>ORDS_03</span></figcaption></figure>
+    <figure class="case-image pair-image "><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_04</span></figcaption></figure>
+    <figure class="case-image wide-image "><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_05</span></figcaption></figure>
+    <figure class="case-image pair-image "><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt=""></div><figcaption><span>ORDS_06</span></figcaption></figure>
+    <figure class="case-image pair-image "><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_07</span></figcaption></figure>
+    <figure class="case-image pair-image "><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_09</span></figcaption></figure>
   </section>
 
-  <!-- EDIT: next project link -->
-  <a class="next" href="dell-technologies.html"><small>Next project</small><span>Dell Technologies</span></a>
+  <section class="other-projects">
+    <h2>Other projects</h2>
+    <div class="other-project-links">
+      <a href="dell-accessories-store.html"><span>Digital/Product</span><strong>Dell Accessories Store</strong><span>View project ↗</span></a>
+      <a href="dell-universal-screen-fill.html"><span>Digital/Product</span><strong>Universal Screen Fill</strong><span>View project ↗</span></a>
+      <a href="windows-dell-shop-app.html"><span>Digital/Product</span><strong>Windows Dell Shop App</strong><span>View project ↗</span></a>
+    </div>
+  </section>
 </main>
 
 <!-- EDIT: contact + links -->
