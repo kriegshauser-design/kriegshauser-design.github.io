@@ -139,6 +139,25 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 /* Preserve complete image artwork throughout galleries; let each image determine its own height. */
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
+
+/* Trial case-study layout inspired by the reference: editorial intro, alternating copy and image groups. */
+.project-intro{display:grid;grid-template-columns:1fr 2fr 1fr;gap:clamp(24px,4vw,64px);padding:calc(var(--pad)*2) var(--pad) calc(var(--pad)*3);border-top:1px solid var(--line);align-items:start}
+.section-label{color:var(--mute);font-size:13px}
+.project-intro-copy{display:grid;gap:1em;max-width:65ch}
+.project-credits{display:grid;gap:18px;align-content:start}
+.project-credits dl{display:grid;gap:4px}
+.project-credits dt{color:var(--mute);font-size:13px}
+.project-credits dd{margin:0}
+.story-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);padding:0 var(--pad) calc(var(--pad)*3);align-items:start}
+.story-gallery .item{grid-column:span 6;min-width:0;margin:0}
+.story-gallery .item.wide{grid-column:1 / -1}
+.story-gallery .item.half{grid-column:span 6}
+.story-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
+.story-gallery .media img{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important}
+.story-gallery figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:13px}
+.story-text{grid-column:1 / -1;display:grid;grid-template-columns:1fr 2fr 1fr;gap:clamp(24px,4vw,64px);padding:calc(var(--pad)*2) 0;align-items:start}
+.story-text p{grid-column:2;max-width:65ch;text-align:left}
+@media(max-width:700px){.project-intro{grid-template-columns:1fr;gap:24px}.project-credits{grid-template-columns:1fr 1fr}.project-credits .section-label{grid-column:1/-1}.story-gallery{gap:12px}.story-gallery .item.half{grid-column:span 6}.story-text{grid-template-columns:1fr;gap:12px;padding:var(--pad) 0}.story-text p{grid-column:1}.story-gallery .item.wide{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -198,24 +217,48 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
   </section>
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
-  <section class="case-layout">
-    <section class="case-gallery" aria-label="Project images">
-      <figure class="item"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>ORDS_01</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_02</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_03</span></figcaption></figure>
-    </section>
-    <div class="case-copy problem"><p><strong>Problem:</strong> Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p></div>
-    <div class="case-copy approach"><p><strong>Approach:</strong> As Associate Creative Director, I drove the creation of the Oracle.com Redwood design system and its broader adoption. I partnered with Program Management, Engineering, Test, UX-Ops, and brand and software design teams, while introducing an agile framework to help teams deliver and refine experiences more efficiently.</p></div>
-    <div class="case-copy outcomes"><p><strong>Outcomes:</strong> Established a unified visual language and a repeatable design foundation for Oracle.com. The design system and cross-functional working methods supported greater consistency across the platform and enabled continuous improvement as business and product needs evolved.</p></div>
+  <section class="project-intro" aria-label="About the project">
+    <div class="section-label">/ About the project</div>
+    <div class="project-intro-copy">
+      <p>Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p>
+      <p>As Associate Creative Director, I drove the creation of the Oracle.com Redwood design system and its broader adoption. I partnered with Program Management, Engineering, Test, UX-Ops, and brand and software design teams, while introducing an agile framework to help teams deliver and refine experiences more efficiently.</p>
+    </div>
+    <div class="project-credits">
+      <div class="section-label">/ Credits</div>
+      <dl><dt>Client</dt><dd>Oracle</dd></dl>
+      <dl><dt>Role</dt><dd>Associate Creative Director</dd></dl>
+      <dl><dt>Team</dt><dd>Cross-functional Brand &amp; Software Design Groups</dd></dl>
+      <dl><dt>Year</dt><dd>2018</dd></dl>
+    </div>
   </section>
-  <section class="gallery pad" aria-label="Additional design system work">
-      <figure class="item"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_04</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_05</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_06</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_07</span></figcaption></figure>
-      
-      <figure class="item"><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_09</span></figcaption></figure>
-      
+
+  <section class="story-gallery" aria-label="Project imagery and details">
+    <figure class="item wide"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>ORDS_01</span></figcaption></figure>
+
+    <section class="story-text">
+      <div class="section-label">/ The challenge</div>
+      <p>Oracle.com needed a unified visual language that could bring consistency to a complex digital platform while supporting evolving marketing and product needs.</p>
+    </section>
+
+    <figure class="item half"><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_02</span></figcaption></figure>
+    <figure class="item half"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_03</span></figcaption></figure>
+
+    <section class="story-text">
+      <div class="section-label">/ The approach</div>
+      <p>I led the creation of the Oracle.com Redwood design system and helped establish the conditions for broader adoption. Working across Program Management, Engineering, Test, UX-Ops, and brand and software design teams, I also introduced an agile framework to help teams deliver and refine experiences more efficiently.</p>
+    </section>
+
+    <figure class="item wide"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_04</span></figcaption></figure>
+    <figure class="item half"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_05</span></figcaption></figure>
+    <figure class="item half"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_06</span></figcaption></figure>
+
+    <section class="story-text">
+      <div class="section-label">/ The outcome</div>
+      <p>The result was a shared design foundation for Oracle.com, helping teams create more consistent experiences and continue improving the platform as business and product needs evolved.</p>
+    </section>
+
+    <figure class="item wide"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_07</span></figcaption></figure>
+    <figure class="item wide"><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_09</span></figcaption></figure>
   </section>
 
   <!-- EDIT: next project link -->
