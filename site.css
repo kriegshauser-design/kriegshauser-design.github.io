@@ -1,0 +1,31 @@
+/* Shared site-wide template styles based on Oracle Redwood Design System Trial. */
+:root{--pad:clamp(16px,2.2vw,32px);--ease:cubic-bezier(.16,.84,.24,1)}
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 14px}
+.bar>a{font-size:16px!important}
+.nav{display:flex;gap:clamp(16px,3vw,48px);justify-content:flex-end;align-items:start}
+.nav a,.nav button,.nav .panel a,.nav .panel a span,.nav>.dd>button,.nav>a{font-size:16px!important}
+.dd{position:relative}
+.dd>button{display:inline-flex;align-items:center;gap:6px}
+.dd>button::after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}
+.dd.open>button::after{transform:translateY(1px) rotate(-135deg)}
+.panel{position:absolute;right:0;top:calc(100% + 14px);min-width:240px;background:var(--bg);border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s .25s;max-height:70svh;overflow:auto}
+.dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
+.panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}
+.panel a span{color:var(--mute)}
+.panel a:hover{background:rgba(28,30,30,.05)}
+@media(hover:hover) and (min-width:701px){.dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}}
+@media(max-width:700px){.nav{flex-wrap:wrap;gap:8px 18px}.dd{position:static}.panel{left:var(--pad);right:var(--pad);top:100%;min-width:0}}
+.menu-toggle{display:none;align-items:center;justify-content:center;width:32px;height:24px;position:relative;z-index:31}
+.menu-toggle span,.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;width:22px;height:1px;background:currentColor;transition:transform .3s var(--ease),opacity .2s var(--ease)}
+.menu-toggle::before{transform:translateY(-7px)}.menu-toggle::after{transform:translateY(7px)}
+.bar.menu-open .menu-toggle span{opacity:0}.bar.menu-open .menu-toggle::before{transform:rotate(45deg)}.bar.menu-open .menu-toggle::after{transform:rotate(-45deg)}
+@media(max-width:1024px){.bar{grid-template-columns:1fr auto;align-items:start}.menu-toggle{display:inline-flex}.nav{display:none;position:fixed;inset:0;z-index:30;background:var(--bg);padding:calc(var(--pad)*4 + env(safe-area-inset-top,0px)) var(--pad) var(--pad);overflow:auto;flex-direction:column;gap:0;justify-content:flex-start;align-items:stretch}.bar.menu-open .nav{display:flex}.nav>.dd,.nav>a{border-top:1px solid var(--line);padding:16px 0}.nav>.dd>button{width:100%;justify-content:space-between}.nav>a{font-size:16px!important}}
+footer{background:var(--bg);padding:0 var(--pad) clamp(32px,5vw,64px);display:grid;grid-template-columns:1fr;gap:0;font-family:"Questrial",sans-serif}
+footer .contact-kicker{border-top:1px solid var(--line);margin:0 calc(-1 * var(--pad));padding:clamp(56px,8vw,112px) var(--pad) 0;font-size:10px;line-height:1.2;letter-spacing:.015em;text-transform:none;margin-bottom:18px}
+footer .contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+footer .contact-link{display:flex;align-items:flex-start;gap:7px;max-width:100%;font-size:clamp(28px,5.8vw,64px);line-height:1.02;letter-spacing:-.045em;text-transform:uppercase;overflow-wrap:anywhere}
+footer .contact-link .hint{font-size:9px;line-height:1.2;letter-spacing:0;white-space:nowrap;text-transform:none;transform:translateY(.12em)}
+footer .contact-link:hover{opacity:.65}
+footer .fine{display:flex;justify-content:space-between;gap:20px;border-top:0;margin:clamp(48px,8vw,100px) calc(-1 * var(--pad)) 0;padding:10px 20px 0;color:var(--muted);font-size:10px;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
+footer .fine::before{content:"";position:absolute;top:0;left:0;width:100%;border-top:1px solid var(--line)}
+@media(max-width:700px){footer .contact-link{font-size:clamp(25px,8vw,42px)}footer .fine{flex-wrap:wrap}}
