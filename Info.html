@@ -23,12 +23,47 @@ footer{padding:calc(var(--pad)*3) var(--pad) var(--pad);border-top:1px solid var
 @media(max-width:1024px){.bar{grid-template-columns:1fr auto;align-items:start}.menu-toggle{display:inline-flex}.nav{display:none;position:fixed;inset:0;z-index:30;background:var(--bg);padding:calc(var(--pad)*4 + env(safe-area-inset-top,0px)) var(--pad) var(--pad);overflow:auto;flex-direction:column;gap:0;justify-content:flex-start;align-items:stretch}.bar.menu-open .nav{display:flex}.nav>.dd,.nav>a{border-top:1px solid var(--line);padding:16px 0}.nav>.dd>button{width:100%;justify-content:space-between;font-size:clamp(1.5rem,4vw,2.5rem)}.nav>a{font-size:clamp(1.5rem,4vw,2.5rem)}.panel{position:static;display:none;min-width:0;max-height:none;border:0;padding:8px 0 0;opacity:1;visibility:visible;transform:none;overflow:visible;transition:none}.dd.open .panel{display:block}.panel a{padding:9px 0;font-size:15px;white-space:normal}}
 @media(max-width:700px){main{padding-top:85px}.intro,.statement,.section-head,.job,.contact{grid-template-columns:1fr}.intro{padding-top:calc(var(--pad)*2)}.intro-copy{justify-self:start}.metrics{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric:nth-child(3){border-top:1px solid var(--line)}.metric:nth-child(4){border-top:1px solid var(--line)}.metric:nth-child(3){padding-left:0}.disciplines{grid-template-columns:1fr 1fr}.discipline{min-height:135px;padding:16px}.award{grid-template-columns:56px 1fr}.award .org{grid-column:2}.portrait{min-height:360px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
-</style></head>
+</style>  <link rel="stylesheet" href="site.css">
+</head>
 <body>
-<header class="bar"><a href="index.html">Michael Kriegshauser</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button><nav class="nav" aria-label="Main">
-<div class="dd"><button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button><div class="panel"><a href="quantum-brand-evolution.html">Quantum Brand Evolution <span>IBM</span></a><a href="ibm-quantum-summit.html">Quantum Summit <span>IBM</span></a><a href="hbcu-quantum-center-at-howard-university.html">HBCU Quantum Center <span>Howard</span></a><a href="ibm-quantum-visual-identity.html">Quantum Visual Identity <span>IBM</span></a><a href="ibm-systems-design-summit.html">Design Summit <span>IBM</span></a><a href="ibm-quantum-system-two.html">Quantum System Two <span>IBM</span></a></div></div>
-<div class="dd"><button aria-expanded="false" aria-haspopup="true">Digital/Product</button><div class="panel"><a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System <span>Oracle</span></a><a href="dell-technologies.html">Dell Technologies <span>Dell</span></a><a href="dell-accessories-store.html">Dell Accessories Store <span>Dell</span></a></div></div>
-<div class="dd"><button aria-expanded="false" aria-haspopup="true">Experiential/Direction</button><div class="panel"><a href="Events-Places.html">Places and Events</a><a href="video-creative-direction.html">Video</a><a href="ibm-quantum-hardware-creative-direction.html">Quantum Hardware <span>IBM</span></a><a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One <span>Cleveland Clinic</span></a><a href="selected-designs.html">Selected Designs</a></div></div><a href="Info.html" aria-current="page">Info</a></nav></header>
+<header class="bar">
+  <a href="index.html">Michael Kriegshauser</a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>  <nav class="nav" aria-label="Main">
+    <div class="dd">
+      <button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button>
+      <div class="panel">
+        <a href="quantum-brand-evolution.html">Quantum Brand Evolution </a>
+        <a href="ibm-quantum-summit.html">Quantum Summit </a>
+        <a href="hbcu-quantum-center-at-howard-university.html">HBCU Quantum Center </a>
+        <a href="ibm-quantum-visual-identity.html">Quantum Visual Identity </a>
+        <a href="ibm-systems-design-summit.html">Design Summit </a>
+        <a href="ibm-quantum-system-two.html">Quantum System Two </a>
+      </div>
+    </div>
+    <div class="dd">
+      <button aria-expanded="false" aria-haspopup="true">Digital/Product</button>
+      <div class="panel">
+        <a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System</a>
+        <a href="oraclecom-redwood-design-system-trial.html">Oracle Redwood — Layout Trial</a>
+        <a href="dell-accessories-store.html">Dell Accessories Store</a>
+        <a href="dell-universal-screen-fill.html">Universal Screen Fill</a>
+        <a href="windows-dell-shop-app.html">Windows Dell Shop App</a>
+        <a href="dell-channel-sales-app.html">Dell Channel Sales App</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button aria-expanded="false" aria-haspopup="true">Experiential/Direction</button>
+      <div class="panel">
+        <a href="Events-Places.html">Places and Events</a>
+        <a href="video-creative-direction.html">Video</a>
+        <a href="ibm-quantum-hardware-creative-direction.html">Quantum Hardware </a>
+        <a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One </a>
+        <a href="selected-designs.html">Selected Designs</a>
+      </div>
+    </div>
+    <a href="Info.html">Info</a>
+  </nav>
+</header>
 <main id="top">
 <section class="intro">
 <div><h1 class="reveal">Designing what’s next.</h1></div>
@@ -90,9 +125,14 @@ footer{padding:calc(var(--pad)*3) var(--pad) var(--pad);border-top:1px solid var
 <section class="contact reveal"><div><div class="big">Let’s make something matter.</div><div class="links"><a href="mailto:heykriegs@gmail.com">Email</a><a href="https://www.linkedin.com/in/heykriegs/">LinkedIn</a></div></div></section>
 </main>
 <footer id="contact">
-  <div class="links"><a href="https://www.linkedin.com/in/heykriegs">LinkedIn</a><a href="https://www.instagram.com/heykriegs/">Instagram</a></div>
-  <div class="links"><a href="mailto:Heykriegs@gmail.com">Heykriegs@gmail.com</a></div>
-  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top</a></div>
+  <div class="contact-kicker">Get in touch</div>
+  <div class="contact-links">
+    <a class="contact-link" href="tel:+15129230607"><span>+1 512 923 0607</span><span class="hint">Call</span></a>
+    <a class="contact-link" href="mailto:heykriegs@gmail.com"><span>HEYKRIEGS@GMAIL.COM</span><span class="hint">Mail</span></a>
+    <a class="contact-link" href="https://www.instagram.com/heykriegs/"><span>Instagram</span><span class="hint">Follow</span></a>
+    <a class="contact-link" href="https://www.linkedin.com/in/heykriegs"><span>LinkedIn</span><span class="hint">Connect</span></a>
+  </div>
+  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top ↑</a></div>
 </footer>
 <script>
 document.documentElement.classList.add('js');
