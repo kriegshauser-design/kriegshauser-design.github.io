@@ -132,39 +132,44 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
   <a href="index.html">Michael Kriegshauser</a>
-  <nav class="nav" aria-label="Main">
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>  <nav class="nav" aria-label="Main">
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button>
       <div class="panel">
-        <a href="quantum-brand-evolution.html">Quantum Brand Evolution <span>IBM</span></a>
-        <a href="ibm-quantum-summit.html">Quantum Summit <span>IBM</span></a>
-        <a href="hbcu-quantum-center-at-howard-university.html">HBCU Quantum Center <span>Howard</span></a>
-        <a href="ibm-quantum-visual-identity.html">Quantum Visual Identity <span>IBM</span></a>
-        <a href="ibm-systems-design-summit.html">Design Summit <span>IBM</span></a>
-        <a href="ibm-quantum-system-two.html">Quantum System Two <span>IBM</span></a>
+        <a href="quantum-brand-evolution.html">Quantum Brand Evolution </a>
+        <a href="ibm-quantum-summit.html">Quantum Summit </a>
+        <a href="hbcu-quantum-center-at-howard-university.html">HBCU Quantum Center </a>
+        <a href="ibm-quantum-visual-identity.html">Quantum Visual Identity </a>
+        <a href="ibm-systems-design-summit.html">Design Summit </a>
+        <a href="ibm-quantum-system-two.html">Quantum System Two </a>
       </div>
     </div>
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Digital/Product</button>
       <div class="panel">
-        <a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System <span>Oracle</span></a>
-        <a href="dell-technologies.html">Dell Technologies <span>Dell</span></a>
-        <a href="dell-accessories-store.html">Dell Accessories Store <span>Dell</span></a>
+        <a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System</a>
+        <a href="oraclecom-redwood-design-system-trial.html">Oracle Redwood — Layout Trial</a>
+        <a href="dell-accessories-store.html">Dell Accessories Store</a>
+        <a href="dell-universal-screen-fill.html">Universal Screen Fill</a>
+        <a href="windows-dell-shop-app.html">Windows Dell Shop App</a>
+        <a href="dell-channel-sales-app.html">Dell Channel Sales App</a>
       </div>
     </div>
     <div class="dd">
-      <button aria-expanded="false" aria-haspopup="true">Experiencial/Direction</button>
+      <button aria-expanded="false" aria-haspopup="true">Experiential/Direction</button>
       <div class="panel">
         <a href="Events-Places.html">Places and Events</a>
         <a href="video-creative-direction.html">Video</a>
-        <a href="ibm-quantum-hardware-creative-direction.html">Quantum Hardware <span>IBM</span></a>
-        <a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One <span>Cleveland Clinic</span></a>
+        <a href="ibm-quantum-hardware-creative-direction.html">Quantum Hardware </a>
+        <a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One </a>
+        <a href="selected-designs.html">Selected Designs</a>
       </div>
     </div>
     <a href="Info.html">Info</a>
@@ -217,9 +222,14 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
 <!-- EDIT: contact + links -->
 <footer id="contact">
-  <div class="links"><a href="https://www.linkedin.com/in/heykriegs">LinkedIn</a><a href="https://www.instagram.com/heykriegs/">Instagram</a></div>
-  <div class="links"><a href="mailto:Heykriegs@gmail.com">Heykriegs@gmail.com</a></div>
-  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top</a></div>
+  <div class="contact-kicker">Get in touch</div>
+  <div class="contact-links">
+    <a class="contact-link" href="tel:+15129230607"><span>+1 512 923 0607</span><span class="hint">Call</span></a>
+    <a class="contact-link" href="mailto:heykriegs@gmail.com"><span>HEYKRIEGS@GMAIL.COM</span><span class="hint">Mail</span></a>
+    <a class="contact-link" href="https://www.instagram.com/heykriegs/"><span>Instagram</span><span class="hint">Follow</span></a>
+    <a class="contact-link" href="https://www.linkedin.com/in/heykriegs"><span>LinkedIn</span><span class="hint">Connect</span></a>
+  </div>
+  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top ↑</a></div>
 </footer>
 
 <script>
@@ -256,5 +266,6 @@ document.documentElement.classList.add('js');
   items.forEach(function(i){io.observe(i)});
 })();
 </script>
+<script>(function(){var bar=document.querySelector('.bar'),toggle=bar&&bar.querySelector('.menu-toggle');if(!bar||!toggle)return;toggle.addEventListener('click',function(e){e.stopPropagation();var open=bar.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':''});bar.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){bar.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow=''})})})();</script>
 </body>
 </html>
