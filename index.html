@@ -127,12 +127,13 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
-  <a href="#top">Michael Kriegshauser</a>
+  <a href="index.html">Michael Kriegshauser</a>
   <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>  <nav class="nav" aria-label="Main">
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button>
@@ -148,7 +149,6 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Digital/Product</button>
       <div class="panel">
-        <a href="oraclecom.html">Oracle.com</a>
         <a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System</a>
         <a href="oraclecom-redwood-design-system-trial.html">Oracle Redwood — Layout Trial</a>
         <a href="dell-accessories-store.html">Dell Accessories Store</a>
@@ -252,9 +252,14 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
 <!-- EDIT: contact + links -->
 <footer id="contact">
-  <div class="links"><a href="https://www.linkedin.com/in/heykriegs">LinkedIn</a><a href="https://www.instagram.com/heykriegs/">Instagram</a></div>
-  <div class="links"><a href="mailto:Heykriegs@gmail.com">Heykriegs@gmail.com</a></div>
-  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top</a></div>
+  <div class="contact-kicker">Get in touch</div>
+  <div class="contact-links">
+    <a class="contact-link" href="tel:+15129230607"><span>+1 512 923 0607</span><span class="hint">Call</span></a>
+    <a class="contact-link" href="mailto:heykriegs@gmail.com"><span>HEYKRIEGS@GMAIL.COM</span><span class="hint">Mail</span></a>
+    <a class="contact-link" href="https://www.instagram.com/heykriegs/"><span>Instagram</span><span class="hint">Follow</span></a>
+    <a class="contact-link" href="https://www.linkedin.com/in/heykriegs"><span>LinkedIn</span><span class="hint">Connect</span></a>
+  </div>
+  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to top ↑</a></div>
 </footer>
 
 <script>
