@@ -73,6 +73,17 @@ footer .fine{display:flex;justify-content:space-between;gap:20px;border-top:1px 
 @media(max-width:700px){footer .contact-link{font-size:clamp(25px,8vw,42px)}footer .fine{flex-wrap:wrap}}
 @media(max-width:700px){.bar{padding-top:34px}.nav{gap:8px 14px;flex-wrap:wrap}.case-heading{padding-top:260px}.case-heading h1{font-size:clamp(2.4rem,7vw,7rem)}.case-information{grid-template-columns:1fr 1fr;gap:16px;padding-bottom:24px}.case-information .case-credits{grid-column:1/-1;grid-row:1}.case-information .info-copy{grid-column:1/-1;grid-row:2;font-size:16px;width:80%}.case-credits{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}.case-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 10px}.case-gallery .pair-image{grid-column:span 1;width:100%;margin:0}.case-gallery .wide-image{grid-column:1/-1}.case-gallery .gallery-note{grid-column:span 1;width:85%;max-width:none}.approach-group{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px;row-gap:20px}.approach-group .gallery-note{grid-column:1/-1;width:calc(42.5% - 4.25px)}.approach-group .pair-image{grid-column:span 1;width:100%;margin:0}.other-project-links{gap:8px}.other-project-links strong{font-size:12px}footer{grid-template-columns:1fr;gap:14px}footer .fine{grid-column:1/-1}}
 
+
+
+/* Keep all navigation typography at 16px across desktop, dropdowns, and mobile. */
+.nav a,
+.nav button,
+.nav .panel a,
+.nav .panel a span,
+.nav > .dd > button,
+.nav > a {
+  font-size: 16px !important;
+}
 </style>
 </head>
 <body>
