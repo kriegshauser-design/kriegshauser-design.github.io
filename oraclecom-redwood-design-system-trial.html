@@ -4,27 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- EDIT: title + description -->
-<title>Oracle.com Redwood Design System — Layout Trial — Michael Kriegshauser</title>
+<title>Oracle.com & Redwood Design Evolution — Michael Kriegshauser</title>
 <meta name="description" content="Oracle.com Redwood Design System case study by Michael Kriegshauser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fcfaf7;--ink:#1c1e1e;--mute:rgba(28,30,30,.55);--line:rgba(28,30,30,.16);--pad:clamp(16px,2.2vw,32px);--ease:cubic-bezier(.16,.84,.24,1);color-scheme:light;font-family:"Questrial",Helvetica,Arial,sans-serif;font-synthesis:none;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*,*::before,*::after{box-sizing:inherit}*{margin:0}html,body{background:var(--bg)}html{scroll-behavior:smooth;scroll-padding-top:72px}body{color:var(--ink);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}h1,h2,h3,button{font-weight:400;font:inherit}a{color:inherit;text-decoration:none}button{background:none;border:0;color:inherit;cursor:pointer;padding:0}a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
-.bar{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 14px}
-.nav{display:flex;gap:clamp(16px,3vw,48px);justify-content:flex-end;align-items:start}.dd{position:relative}.dd>button{display:inline-flex;align-items:center;gap:6px}.dd>button::after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}.dd.open>button::after{transform:translateY(1px) rotate(-135deg)}
-.panel{position:absolute;right:0;top:calc(100% + 14px);min-width:240px;background:var(--bg);border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s .25s;max-height:70svh;overflow:auto}.dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}.panel a:hover{background:rgba(28,30,30,.05)}
-@media(hover:hover) and (min-width:701px){.dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}}
-@media(max-width:700px){.nav{flex-wrap:wrap;gap:8px 18px}.dd{position:static}.panel{left:var(--pad);right:var(--pad);top:100%;min-width:0}}
-.case-heading{padding:clamp(170px,26vw,330px) var(--pad) clamp(28px,4vw,58px);display:grid;gap:clamp(18px,3vw,38px)}.case-categories{display:flex;gap:10px;color:var(--mute);font-size:clamp(13px,1.2vw,16px)}.case-heading h1{font-size:clamp(3.3rem,11.2vw,12.5rem);line-height:.84;letter-spacing:-.065em;max-width:12ch}
-.case-hero{padding:0 var(--pad)}.case-image{margin:0;min-width:0}.case-image .media{width:100%;overflow:visible;background:transparent}.case-image img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}.case-image figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:12px}
-.case-information{display:grid;grid-template-columns:minmax(100px,.8fr) minmax(0,2fr) minmax(150px,.9fr);gap:clamp(20px,4vw,64px);padding:clamp(48px,8vw,120px) var(--pad) clamp(58px,9vw,132px);align-items:start}.info-label{font-size:13px;color:var(--mute)}.info-copy{font-size:clamp(18px,2.1vw,27px);line-height:1.34;letter-spacing:-.02em;max-width:42ch}.info-copy p+p{margin-top:1em}.case-credits{display:grid;gap:clamp(18px,2vw,28px)}.case-credits dl{display:grid;gap:4px}.case-credits dt{font-size:13px;color:var(--mute)}.case-credits dd{margin:0}
-.case-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(8px,1.2vw,18px);row-gap:clamp(18px,2vw,30px);padding:0 var(--pad) clamp(80px,12vw,170px)}.case-gallery .case-image{grid-column:span 6}.case-gallery .case-image.wide-image{grid-column:1/-1}.case-gallery .case-image.pair-image{grid-column:span 6}
-.other-projects{border-top:1px solid var(--line);padding:clamp(38px,6vw,84px) var(--pad) clamp(70px,10vw,140px)}.other-projects h2{font-size:clamp(2rem,5vw,5rem);letter-spacing:-.045em;margin-bottom:clamp(24px,4vw,52px)}.other-project-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,28px)}.other-project-links a{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:12px}.other-project-links a span{font-size:12px;color:var(--mute)}.other-project-links strong{font-weight:400;font-size:clamp(18px,2.2vw,28px);letter-spacing:-.02em}.other-project-links a span:last-child{margin-top:12px}
-footer{background:var(--bg);padding:clamp(40px,6vw,84px) var(--pad) 20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px)}footer .links{display:flex;gap:18px;flex-wrap:wrap}footer .fine{grid-column:1/-1;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;color:var(--mute);font-size:12px}
+:root{--bg:#f3eee2;--ink:#171717;--muted:#77736c;--line:#d9d2c5;--pad:clamp(18px,5.2vw,76px);font-family:"Questrial",sans-serif;font-synthesis:none;color-scheme:light;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}*{margin:0}html,body{background:var(--bg)}html{scroll-behavior:smooth}body{color:var(--ink);font-family:"Questrial",sans-serif;font-size:14px;line-height:1.35;-webkit-font-smoothing:antialiased}h1,h2,h3,button{font-weight:400;font-family:"Questrial",sans-serif}a{color:inherit;text-decoration:none}button{background:none;border:0;color:inherit;cursor:pointer;padding:0}a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+.bar{position:absolute;top:0;left:0;right:0;z-index:20;background:transparent;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:22px var(--pad) 14px;font-size:11px}
+.nav{display:flex;gap:clamp(14px,2.4vw,34px);justify-content:flex-end;align-items:start}.dd{position:relative}.dd>button{display:inline-flex;align-items:center;gap:6px}.dd>button::after{content:"";width:4px;height:4px;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-2px) rotate(45deg)}.panel{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--bg);border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s;max-height:70svh;overflow:auto}.dd.open .panel{opacity:1;visibility:visible;transform:none}.panel a{display:flex;justify-content:space-between;padding:8px 14px;white-space:nowrap}.panel a:hover{background:rgba(0,0,0,.04)}@media(hover:hover) and (min-width:701px){.dd:hover .panel{opacity:1;visibility:visible;transform:none}}
 .menu-toggle{display:none}
-@media(max-width:700px){.case-heading{padding-top:160px}.case-heading h1{font-size:clamp(3.3rem,16vw,7rem)}.case-information{grid-template-columns:1fr;gap:18px;padding:52px var(--pad) 64px}.info-copy{font-size:clamp(19px,5vw,23px)}.case-credits{grid-template-columns:1fr 1fr;gap:18px}.case-credits .info-label{grid-column:1/-1}.case-gallery{gap:12px}.case-gallery .case-image.pair-image{grid-column:span 6}.other-project-links{grid-template-columns:1fr}.other-project-links a{padding:14px 0}.other-projects h2{margin-bottom:24px}footer{grid-template-columns:1fr;gap:22px}footer .fine{grid-column:1/-1}}
+.case-heading{padding:clamp(105px,13vw,175px) var(--pad) 22px;display:grid;grid-template-columns:1fr;gap:clamp(18px,3vw,34px)}.case-categories{font-size:10px;color:var(--muted);display:flex;gap:8px}.case-heading h1{font-size:clamp(35px,5.3vw,76px);line-height:.88;letter-spacing:-.055em;max-width:10ch}
+.case-information{display:grid;grid-template-columns:.7fr 1fr 2.2fr;gap:clamp(16px,3vw,42px);padding:0 var(--pad) clamp(24px,4vw,52px);align-items:start;font-size:clamp(10px,.9vw,13px)}.info-label{font-size:10px;color:var(--muted)}.info-copy{font-size:clamp(11px,1vw,14px);line-height:1.42;max-width:55ch}.info-copy p+p{margin-top:.8em}.case-credits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px}.case-credits .info-label{grid-column:1/-1}.case-credits dl{display:grid;gap:3px}.case-credits dt{font-size:10px;color:var(--muted)}.case-credits dd{margin:0}
+.case-hero{width:100%;padding:0;margin:0}.case-image{margin:0;min-width:0}.case-image .media{width:100%;overflow:visible;background:transparent}.case-image img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;border:0;border-radius:0;box-shadow:none}.case-image figcaption{display:flex;justify-content:space-between;margin-top:8px;color:var(--muted);font-size:10px}
+.case-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,2vw,28px);row-gap:clamp(22px,4vw,58px);padding:clamp(28px,5vw,68px) var(--pad) clamp(55px,9vw,120px)}.case-gallery .case-image{grid-column:span 6}.case-gallery .wide-image{grid-column:1/-1}.case-gallery .pair-image{grid-column:span 6}.case-gallery .third-image{grid-column:span 4}.gallery-note{grid-column:span 4;font-size:clamp(11px,1vw,14px);line-height:1.45;max-width:35ch;padding-top:4px}.gallery-note h2{font-size:clamp(16px,1.7vw,24px);line-height:1.1;letter-spacing:-.025em;margin-bottom:12px}.gallery-note p+p{margin-top:.8em}
+.other-projects{border-top:1px solid var(--line);padding:clamp(30px,5vw,68px) var(--pad) clamp(45px,7vw,90px)}.other-projects h2{font-size:clamp(22px,3vw,42px);letter-spacing:-.04em;margin-bottom:20px;text-transform:uppercase}.other-project-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.5vw,20px)}.other-project-links a{display:grid;gap:8px}.other-project-links img{display:block;width:100%;aspect-ratio:1.7;object-fit:cover;border-radius:0}.other-project-links a span{font-size:10px;color:var(--muted)}.other-project-links strong{font-weight:400;font-size:clamp(13px,1.3vw,18px)}
+footer{background:var(--bg);padding:0 var(--pad) 18px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:11px}footer .links{display:flex;gap:14px;flex-wrap:wrap}footer .fine{grid-column:1/-1;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;color:var(--muted);font-size:10px}
+@media(max-width:700px){.bar{padding-top:16px}.nav{gap:8px 14px;flex-wrap:wrap}.case-heading{padding-top:100px}.case-heading h1{font-size:clamp(34px,10vw,54px)}.case-information{grid-template-columns:1fr 1fr;gap:16px;padding-bottom:24px}.info-copy{grid-column:1/-1;grid-row:2;font-size:12px}.case-credits{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}.case-gallery{gap:20px 10px}.case-gallery .pair-image{grid-column:span 6}.case-gallery .gallery-note{grid-column:1/-1;max-width:48ch}.other-project-links{gap:8px}.other-project-links strong{font-size:12px}footer{grid-template-columns:1fr;gap:14px}footer .fine{grid-column:1/-1}}
+
 </style>
 </head>
 <body>
@@ -70,50 +68,33 @@ footer{background:var(--bg);padding:clamp(40px,6vw,84px) var(--pad) 20px;border-
 </header>
 
 <main id="top">
-  <section class="case-heading">
-    <div class="case-categories"><span>Digital</span><span>/</span><span>Web Design</span></div>
-    <h1>Oracle.com &amp; Redwood Design System</h1>
-  </section>
-
-  <section class="case-hero" aria-label="Project hero image">
-    <figure class="case-image hero-image"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt=""></div><figcaption><span>ORDS_01</span></figcaption></figure>
-  </section>
-
-  <section class="case-information" aria-label="About the project and credits">
-    <div class="info-label">/ About the project</div>
-    <div class="info-copy">
-      <p>Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p>
-      <p>As Associate Creative Director, I drove the creation of the Oracle.com Redwood design system and its broader adoption. I partnered with Program Management, Engineering, Test, UX-Ops, and brand and software design teams, while introducing an agile framework to help teams deliver and refine experiences more efficiently.</p>
-      <p>Established a unified visual language and a repeatable design foundation for Oracle.com. The design system and cross-functional working methods supported greater consistency across the platform and enabled continuous improvement as business and product needs evolved.</p>
-    </div>
-    <div class="case-credits">
-      <div class="info-label">/ Credits</div>
-      <dl><dt>Client</dt><dd>Oracle</dd></dl>
-      <dl><dt>Role</dt><dd>Associate Creative Director</dd></dl>
-      <dl><dt>Team</dt><dd>Cross-functional Brand &amp; Software Design Groups</dd></dl>
-      <dl><dt>Year</dt><dd>2018</dd></dl>
-    </div>
-  </section>
-
-  <section class="case-gallery" aria-label="Project imagery">
-    <figure class="case-image wide-image "><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt=""></div><figcaption><span>ORDS_02</span></figcaption></figure>
-    <figure class="case-image pair-image "><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt=""></div><figcaption><span>ORDS_03</span></figcaption></figure>
-    <figure class="case-image pair-image "><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_04</span></figcaption></figure>
-    <figure class="case-image wide-image "><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_05</span></figcaption></figure>
-    <figure class="case-image pair-image "><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt=""></div><figcaption><span>ORDS_06</span></figcaption></figure>
-    <figure class="case-image pair-image "><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_07</span></figcaption></figure>
-    <figure class="case-image pair-image "><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt=""></div><figcaption><span>ORDS_09</span></figcaption></figure>
-  </section>
-
-  <section class="other-projects">
-    <h2>Other projects</h2>
-    <div class="other-project-links">
-      <a href="dell-accessories-store.html"><span>Digital/Product</span><strong>Dell Accessories Store</strong><span>View project ↗</span></a>
-      <a href="dell-universal-screen-fill.html"><span>Digital/Product</span><strong>Universal Screen Fill</strong><span>View project ↗</span></a>
-      <a href="windows-dell-shop-app.html"><span>Digital/Product</span><strong>Windows Dell Shop App</strong><span>View project ↗</span></a>
-    </div>
-  </section>
-</main>
+<section class="case-heading"><div class="case-categories"><span>Digital</span><span>·</span><span>Web / Design Systems</span></div><h1>Oracle.com &amp;<br>Redwood Design<br>Evolution</h1></section>
+<section class="case-information" aria-label="Project overview and credits">
+<div class="info-label">PROJECT OVERVIEW</div>
+<div class="case-credits">
+<dl><dt>Client</dt><dd>Oracle</dd></dl><dl><dt>Year</dt><dd>2018</dd></dl><dl><dt>Role</dt><dd>Associate Creative Director</dd></dl><dl><dt>Team</dt><dd>Brand &amp; Software Design</dd></dl>
+</div>
+<div class="info-copy"><p>Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p><p>I led the creation and adoption of the Redwood design system, partnering with Program Management, Engineering, Test, UX-Ops, and brand and software design teams. An agile framework helped teams deliver and refine experiences more efficiently.</p></div>
+</section>
+<section class="case-hero" aria-label="Project hero image"><figure class="case-image"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="Abstract Redwood visual identity artwork"></div></figure></section>
+<section class="case-gallery" aria-label="Project imagery">
+<figure class="case-image wide-image"><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="Redwood design system and brand components"></div><figcaption><span>01 / Redwood visual language</span></figcaption></figure>
+<div class="gallery-note"><h2>A shared visual language</h2><p>Bringing brand expression and interface patterns into a cohesive system helped teams build with greater consistency across Oracle.com.</p></div>
+<figure class="case-image wide-image"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="Redwood design system shown on a tablet"></div><figcaption><span>02 / Interface in context</span></figcaption></figure>
+<div class="gallery-note"><h2>Designed for real use</h2><p>Patterns and components were shaped around the needs of teams creating and maintaining digital experiences at scale.</p></div>
+<figure class="case-image pair-image"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="Redwood interface concepts"></div><figcaption><span>03 / Interface studies</span></figcaption></figure>
+<figure class="case-image pair-image"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="Redwood mobile interface explorations"></div><figcaption><span>04 / Responsive patterns</span></figcaption></figure>
+<figure class="case-image wide-image"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="Redwood mobile interface family"></div><figcaption><span>05 / System across screens</span></figcaption></figure>
+<div class="gallery-note"><h2>Built to evolve</h2><p>The system created a repeatable foundation for teams to extend, test, and improve the experience as business and product needs changed.</p></div>
+<figure class="case-image wide-image"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="Redwood interface on a tablet"></div><figcaption><span>06 / Product experience</span></figcaption></figure>
+<figure class="case-image pair-image"><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt="Redwood design system screens"></div><figcaption><span>07 / Component application</span></figcaption></figure>
+<figure class="case-image pair-image"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="Additional Redwood responsive interface example"></div><figcaption><span>08 / Responsive design</span></figcaption></figure>
+</section>
+<section class="other-projects"><h2>Other projects</h2><div class="other-project-links">
+<a href="dell-accessories-store.html"><img src="/images/DSA_01.jpg" alt=""><strong>Dell Accessories Store</strong><span>Digital / Product ↗</span></a>
+<a href="dell-universal-screen-fill.html"><img src="/images/WDS_03.jpg" alt=""><strong>Universal Screen Fill</strong><span>Digital / Product ↗</span></a>
+<a href="windows-dell-shop-app.html"><img src="/images/WDS_04.jpg" alt=""><strong>Windows Dell Shop App</strong><span>Digital / Product ↗</span></a>
+</div></section></main>
 
 <!-- EDIT: contact + links -->
 <footer id="contact">
