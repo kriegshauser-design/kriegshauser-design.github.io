@@ -128,6 +128,22 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 </style>
 <link rel="stylesheet" href="site.css">
+<style>
+/* Home page only: gallery images slide up and fade in as they enter the viewport.
+   (site.css disables the older reveal effects site-wide; this is scoped to index.html.) */
+html.js .gallery>.item{
+  opacity:0;
+  transform:translate3d(0,72px,0);
+  transition:opacity .9s var(--ease),transform 1.2s var(--ease);
+  transition-delay:var(--d,0ms);
+  will-change:opacity,transform;
+}
+html.js .gallery>.item.in{opacity:1;transform:none}
+html.js .gallery>.item.done{will-change:auto}
+@media (prefers-reduced-motion:reduce){
+  html.js .gallery>.item{opacity:1;transform:none;transition:none}
+}
+</style>
 </head>
 <body>
 
@@ -292,6 +308,33 @@ document.documentElement.classList.add('js');
   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
   window.addEventListener('resize',function(){if(window.innerWidth>1024)closeMenu()});
+})();
+
+// Gallery images slide in on load / as they scroll into view
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.gallery>.item'));
+  if(!items.length)return;
+  function show(el,delay){
+    el.style.setProperty('--d',delay+'ms');
+    el.classList.add('in');
+    setTimeout(function(){el.classList.add('done')},delay+1400);
+  }
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){el.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    var batch=entries.filter(function(e){return e.isIntersecting})
+      .sort(function(a,b){return a.boundingClientRect.top-b.boundingClientRect.top||a.boundingClientRect.left-b.boundingClientRect.left});
+    batch.forEach(function(e,i){
+      var el=e.target;io.unobserve(el);
+      var img=el.querySelector('img'),delay=Math.min(i,5)*110,fired=false;
+      function go(){if(fired)return;fired=true;show(el,delay)}
+      // wait for the image so it slides in already painted (but never block more than 1.5s)
+      if(img&&!img.complete){img.addEventListener('load',go,{once:true});img.addEventListener('error',go,{once:true});setTimeout(go,1500)}
+      else go();
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  items.forEach(function(el){io.observe(el)});
 })();
 
 </script>
