@@ -55,3 +55,37 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 button,button *{font-size:15px}
 .nav a,.nav button,.nav .panel a,.nav .panel a span,.nav>.dd>button,.nav>a{font-size:16px!important}
 .case-image figcaption{margin-top:15px}
+
+
+/* Render portfolio content immediately; no staged image/text reveal animations. */
+.js .item .media,
+.item .media{
+  clip-path:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  animation:none!important;
+  transition:none!important;
+}
+.js .item .media>*,
+.item .media>*{
+  transform:none!important;
+  opacity:1!important;
+  animation:none!important;
+  transition:none!important;
+}
+.js .item figcaption,
+.item figcaption,
+.js .quote,
+.quote,
+.reveal,
+.reveal.in,
+.intro h1,
+.title h1{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  clip-path:none!important;
+  animation:none!important;
+  transition:none!important;
+}
+.stagger>*{transition-delay:0ms!important;animation:none!important}
