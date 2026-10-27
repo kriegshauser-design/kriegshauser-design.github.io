@@ -237,20 +237,7 @@ document.documentElement.classList.add('js');
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
 })();
 
-// Image reveal: each media frame wipes open and settles as it scrolls into view, staggered within a row
-(function(){
-  var items=[].slice.call(document.querySelectorAll('.item,.quote'));
-  if(!('IntersectionObserver' in window)){items.forEach(function(i){i.classList.add('in')});return}
-  var io=new IntersectionObserver(function(entries){
-    var batch=entries.filter(function(e){return e.isIntersecting});
-    batch.forEach(function(e,n){
-      var el=e.target;
-      setTimeout(function(){el.classList.add('in')},n*140);
-      io.unobserve(el);
-    });
-  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  items.forEach(function(i){io.observe(i)});
-})();
+
 </script>
 <script>(function(){var bar=document.querySelector('.bar'),toggle=bar&&bar.querySelector('.menu-toggle');if(!bar||!toggle)return;toggle.addEventListener('click',function(e){e.stopPropagation();var open=bar.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':''});bar.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){bar.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow=''})})})();</script>
 </body>
