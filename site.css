@@ -306,3 +306,70 @@ main::after{
   .digital-product-case .digital-case-image.lead-image,.digital-product-case .digital-case-note{grid-column:1}
   .digital-product-case .digital-case-image .media{padding:8px}
 }
+
+/* ------------------------------------------------------------------
+   SITE INTRO COMPONENT — shared navigation / title / credits / overview
+   Used at the top of every primary site page.
+   ------------------------------------------------------------------ */
+.site-intro{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  column-gap:16px;
+  padding:0 var(--pad) 48px;
+  align-items:start;
+}
+.site-intro-title{
+  grid-column:1/-1;
+  min-height:263px;
+  display:flex;
+  align-items:flex-end;
+  padding:0 0 28px;
+}
+.site-intro-title h1,.site-intro-title{
+  font-size:clamp(38px,5.1vw,64px);
+  line-height:.98;
+  letter-spacing:-.04em;
+  font-weight:400;
+}
+.site-intro-title h1{margin:0;max-width:14ch}
+.site-intro-rule{
+  grid-column:1/-1;
+  width:calc(100% + 40px);
+  margin:0 -20px 30px;
+  border-top:1px solid var(--ink);
+}
+.site-intro-meta{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  font-size:14px;
+  line-height:1.35;
+}
+.site-intro-meta-one{grid-column:1}
+.site-intro-meta-two{grid-column:2}
+.site-intro-meta dl{margin:0;display:grid;gap:2px;align-content:start}
+.site-intro-meta dt{font-size:14px;color:var(--ink);font-weight:400}
+.site-intro-meta dd{margin:0}
+.site-intro-meta-two dl:last-child dd{
+  columns:2;
+  column-gap:22px;
+}
+.site-intro-description{
+  grid-column:3/5;
+  max-width:58ch;
+  font-size:17px;
+  line-height:1.42;
+}
+.site-intro-description p{margin:0}
+.site-intro-description p+p{margin-top:.7em}
+.site-intro-description:empty{display:none}
+@media(max-width:700px){
+  .site-intro{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px;padding-bottom:34px}
+  .site-intro-title{min-height:235px;padding-bottom:24px}
+  .site-intro-title h1,.site-intro-title{font-size:clamp(36px,9vw,52px)}
+  .site-intro-rule{margin-bottom:16px}
+  .site-intro-meta-one{grid-column:1}
+  .site-intro-meta-two{grid-column:2}
+  .site-intro-meta-two dl:last-child dd{columns:1}
+  .site-intro-description{grid-column:1/-1;font-size:16px;margin-top:8px}
+}
