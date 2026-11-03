@@ -224,3 +224,85 @@ main::after{
 @media(max-width:700px){
   .home-page .gallery{grid-template-columns:1fr;gap:20px 10px}
 }
+
+/* ------------------------------------------------------------------
+   DIGITAL / PRODUCT CASE STUDIES
+   Oracle-inspired case heading, credits, narrative, and image rhythm.
+   ------------------------------------------------------------------ */
+.digital-product-case main{width:100%;overflow:hidden}
+.digital-product-case .digital-case-heading{
+  padding:260px var(--pad) 26px;
+  min-height:0;
+  border:0;
+}
+.digital-product-case .digital-case-heading h1{
+  max-width:13ch;
+  font-size:clamp(30px,4.2vw,58px);
+  line-height:.98;
+  letter-spacing:-.035em;
+  font-weight:400;
+}
+.digital-product-case .digital-case-information{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  padding:22px var(--pad) 48px;
+  align-items:start;
+}
+.digital-product-case .digital-case-credits{
+  grid-column:1/3;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px 16px;
+}
+.digital-product-case .digital-case-credits dl{display:grid;gap:3px;align-content:start}
+.digital-product-case .digital-case-credits dt{
+  color:var(--muted);font-size:12px;font-weight:400;
+}
+.digital-product-case .digital-case-credits dd{margin:0;font-size:14px;line-height:1.4}
+.digital-product-case .digital-case-intro{
+  grid-column:3/5;
+  max-width:58ch;
+  font-size:15px;
+  line-height:1.45;
+}
+.digital-product-case .digital-case-intro p+p{margin-top:.8em}
+.digital-product-case .digital-case-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:40px;
+  padding:0 var(--pad) 100px;
+  align-items:start;
+}
+.digital-product-case .digital-case-image{margin:0;min-width:0}
+.digital-product-case .digital-case-image .media{
+  width:100%;height:auto;overflow:hidden;background:#eee8db;padding:12px;
+}
+.digital-product-case .digital-case-image img{
+  display:block;width:100%;height:auto;max-width:100%;object-fit:contain;
+}
+.digital-product-case .digital-case-image.lead-image{grid-column:1/-1}
+.digital-product-case .digital-case-note{
+  grid-column:span 1;
+  width:100%;
+  max-width:54ch;
+  padding:6px 0;
+  align-self:center;
+}
+.digital-product-case .digital-case-note h2{
+  font-size:clamp(17px,1.8vw,24px);
+  font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px;
+}
+.digital-product-case .digital-case-note p{font-size:15px;line-height:1.45}
+@media(max-width:700px){
+  .digital-product-case .digital-case-heading{padding-top:260px}
+  .digital-product-case .digital-case-information{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px 14px;padding-bottom:34px;
+  }
+  .digital-product-case .digital-case-credits{grid-column:1/-1;gap:18px 12px}
+  .digital-product-case .digital-case-intro{grid-column:1/-1;font-size:14px}
+  .digital-product-case .digital-case-gallery{grid-template-columns:1fr;gap:24px;padding-bottom:64px}
+  .digital-product-case .digital-case-image.lead-image,.digital-product-case .digital-case-note{grid-column:1}
+  .digital-product-case .digital-case-image .media{padding:8px}
+}
