@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- EDIT: title + description -->
 <title>Oracle.com & Redwood Design Evolution — Michael Kriegshauser</title>
-<meta name="description" content="Oracle.com Redwood Design System case study by Michael Kriegshauser.">
+<meta name="description" content="Oracle.com digital experience case study by Michael Kriegshauser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
@@ -93,7 +93,17 @@ footer .fine::before{content:"";position:absolute;top:0;left:0;width:100%;border
 }
 </style>
 <link rel="stylesheet" href="site.css">
-</head>
+<style>
+.case-heading h1{font-size:clamp(2.4rem,7vw,7rem);max-width:none}
+.oracle-gallery{padding-top:clamp(26px,4vw,52px);row-gap:clamp(28px,5vw,64px);padding-bottom:clamp(55px,9vw,120px)}
+.oracle-gallery .case-image .media{background:transparent}
+.oracle-gallery .framed .media{background:#f1e8d7;padding:clamp(8px,1.4vw,16px)}
+.oracle-gallery .gallery-note{width:48%;max-width:none;grid-column:1/-1}
+.oracle-gallery .second-note{margin-top:-18px}
+.oracle-gallery .image-pair{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,24px);align-items:start}
+.oracle-gallery .image-pair .case-image{width:100%;min-width:0}
+@media(max-width:700px){.oracle-gallery{row-gap:26px}.oracle-gallery .gallery-note{width:72%}.oracle-gallery .second-note{margin-top:-4px}.oracle-gallery .image-pair{gap:8px}}
+</style></head>
 <body>
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
@@ -115,7 +125,7 @@ footer .fine::before{content:"";position:absolute;top:0;left:0;width:100%;border
       <button aria-expanded="false" aria-haspopup="true">Digital/Product</button>
       <div class="panel">
         <a href="oraclecom-redwood-design-system.html">Oracle.com Redwood Design System</a>
-        <a href="oraclecom-redwood-design-system-trial.html">Oracle Redwood — Layout Trial</a>
+        <a href="oraclecom-redwood-design-system-trial.html">Oracle.com</a>
         <a href="dell-accessories-store.html">Dell Accessories Store</a>
         <a href="dell-universal-screen-fill.html">Universal Screen Fill</a>
         <a href="windows-dell-shop-app.html">Windows Dell Shop App</a>
@@ -137,35 +147,32 @@ footer .fine::before{content:"";position:absolute;top:0;left:0;width:100%;border
 </header>
 
 <main id="top">
-<section class="case-heading"><h1>Oracle.com &amp;<br>Redwood Design<br>Evolution</h1></section>
+<section class="case-heading"><h1>Oracle.com</h1></section>
 <section class="case-information" aria-label="Project overview and credits">
-
 <div class="case-credits">
-<dl><dt>Client</dt><dd>Oracle</dd></dl><dl><dt>Year</dt><dd>2018</dd></dl><dl><dt>Role</dt><dd>Associate Creative Director</dd></dl><dl><dt>Team</dt><dd>Brand &amp; Software Design</dd></dl>
+<dl><dt>Client</dt><dd>Oracle</dd></dl><dl><dt>Year</dt><dd>2017</dd></dl>
+<dl><dt>Role</dt><dd>Associate Creative Director, Web/Product</dd></dl><dl><dt>Team</dt><dd>Oracle Web Design Team</dd></dl>
 </div>
-<div class="info-copy"><p>Oracle.com needed a more consistent digital experience across a complex platform, with a shared visual language that could support marketing and product goals while continuing to evolve the Oracle brand.</p><p>I led the creation and adoption of the Redwood design system, partnering with Program Management, Engineering, Test, UX-Ops, and brand and software design teams. An agile framework helped teams deliver and refine experiences more efficiently.</p></div>
-</section>
-<section class="case-hero" aria-label="Project hero image"><figure class="case-image"><div class="media"><img src="/images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="Abstract Redwood visual identity artwork"></div></figure></section>
-<section class="case-gallery" aria-label="Project imagery">
-<figure class="case-image wide-image"><div class="media"><img src="/images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="Redwood design system and brand components"></div><figcaption><span>01 / Redwood visual language</span></figcaption></figure>
-<div class="gallery-note"><h2>Problem:</h2><p>Bringing brand expression and interface patterns into a cohesive system helped teams build with greater consistency across Oracle.com.</p></div>
-<figure class="case-image wide-image"><div class="media"><img src="/images/0cdfdd39-81f6-4825-8793-0a196ca632a4_rw_3840.png" alt="Redwood design system shown on a tablet"></div><figcaption><span>02 / Interface in context</span></figcaption></figure>
-<div class="approach-group">
-<div class="gallery-note"><h2>Approach:</h2><p>Patterns and components were shaped around the needs of teams creating and maintaining digital experiences at scale.</p></div>
-<figure class="case-image pair-image"><div class="media"><img src="/images/c4a6a59f-0b45-4397-85ec-97e13fe00d01_rw_1920.jpg" alt="Redwood interface concepts"></div><figcaption><span>03 / Interface studies</span></figcaption></figure>
-<figure class="case-image pair-image"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="Redwood mobile interface explorations"></div><figcaption><span>04 / Responsive patterns</span></figcaption></figure>
+<div class="info-copy">
+<p>Oracle.com was the front door to a vast and evolving portfolio, but its experience had become difficult to navigate and maintain. Distinct site structures, inconsistent patterns, and fragmented content made it harder for customers to find the right information and move confidently through the site.</p>
+<p>Working across design, UX, content, and development, we brought greater clarity to the experience—simplifying navigation, improving key journeys, and establishing a more consistent foundation for the site.</p>
+</div></section>
+<section class="case-gallery oracle-gallery" aria-label="Oracle.com project imagery">
+<figure class="case-image wide-image"><div class="media"><img src="/images/Group%2023.png" alt="Oracle.com responsive experience across desktop, laptop, tablet, and mobile"></div></figure>
+<figure class="case-image wide-image"><div class="media"><img src="/images/Group%2024.png" alt="Oracle.com tablet browsing experience"></div></figure>
+<div class="gallery-note"><h2>Experience:</h2><p>We focused on making Oracle.com easier to explore across devices. Clearer content hierarchy, more deliberate page structures, and responsive layouts helped people move from broad discovery to the information and products most relevant to them.</p></div>
+<figure class="case-image wide-image"><div class="media"><img src="/images/Group%2025.png" alt="Oracle.com mobile experience shown across three phone screens"></div></figure>
+<figure class="case-image wide-image framed"><div class="media"><img src="/images/Group%2026.png" alt="Oracle.com business cloud landing page and integrated content"></div></figure>
+<div class="gallery-note"><h2>Management:</h2><p>We brought teams together around shared standards and a more coordinated approach to content, design, and delivery. This helped reduce one-off solutions while giving teams a clearer framework for evolving the site.</p></div>
+<div class="gallery-note second-note"><h2>Approach:</h2><p>Using an iterative design and development process, we aligned stakeholders, tested ideas early, and refined high-value journeys. A consistent set of patterns made it easier to scale improvements across the broader Oracle.com experience.</p></div>
+<figure class="case-image wide-image framed"><div class="media"><img src="/images/Group%2027.png" alt="Oracle.com product and service search results interface"></div></figure>
+<div class="image-pair">
+<figure class="case-image pair-image framed"><div class="media"><img src="/images/Group%2028.png" alt="Oracle.com navigation and responsive page examples"></div></figure>
+<figure class="case-image pair-image framed"><div class="media"><img src="/images/Group%2029.png" alt="Oracle.com responsive content and design system components"></div></figure>
 </div>
-<figure class="case-image wide-image"><div class="media"><img src="/images/1dda6c1c-084d-44bf-be08-cd7f1e850237_rw_1920.png" alt="Redwood mobile interface family"></div><figcaption><span>05 / System across screens</span></figcaption></figure>
-<div class="gallery-note"><h2>Outcome:</h2><p>The system created a repeatable foundation for teams to extend, test, and improve the experience as business and product needs changed.</p></div>
-<figure class="case-image wide-image"><div class="media"><img src="/images/879668b4-b007-4dd6-b10b-d0effb1076eb_rw_1920.jpg" alt="Redwood interface on a tablet"></div><figcaption><span>06 / Product experience</span></figcaption></figure>
-<figure class="case-image pair-image"><div class="media"><img src="/images/ae7d07ed-b637-49fc-983a-82e2d7ede580_rw_1920.jpg" alt="Redwood design system screens"></div><figcaption><span>07 / Component application</span></figcaption></figure>
-<figure class="case-image pair-image"><div class="media"><img src="/images/51c60de4-3f33-43b3-a12e-3b969b703aca_rw_1920.jpg" alt="Additional Redwood responsive interface example"></div><figcaption><span>08 / Responsive design</span></figcaption></figure>
-</section>
-<section class="other-projects"><h2>Other projects</h2><div class="other-project-links">
-<a href="dell-accessories-store.html"><img src="/images/category.gif" alt=""><strong>Dell accessories store</strong><span>Digital / product ↗</span></a>
-<a href="dell-universal-screen-fill.html"><img src="/images/55b92bac-f21e-474d-93de-5c97aff1b889_rw_1200.jpg" alt=""><strong>Universal screen fill</strong><span>Digital / product ↗</span></a>
-<a href="windows-dell-shop-app.html"><img src="/images/c0a76816-baec-496b-b8c2-0df91e281101_rw_1920.jpg" alt=""><strong>Windows Dell shop app</strong><span>Digital / product ↗</span></a>
-</div></section></main>
+<div class="gallery-note"><h2>Performance:</h2><p>A more coherent experience gave Oracle a stronger digital foundation—one that supported clearer product discovery, more consistent brand expression, and ongoing optimization across the site.</p></div>
+<figure class="case-image wide-image framed"><div class="media"><img src="/images/Group%2030.png" alt="Oracle.com landing page and customer-focused content experience"></div></figure>
+</section></main>
 
 <!-- EDIT: contact + links -->
 <footer id="contact">
