@@ -195,3 +195,14 @@ button,button *{font-size:15px}
   .case-layout>.case-gallery,.case-layout>.case-copy.problem,.case-layout>.case-copy.approach,.case-layout>.case-copy.outcomes{grid-column:1}
   .case-layout>.case-copy.outcomes{max-width:none}
 }
+
+
+/* Sitewide project rules: title baseline and footer separation. */
+.title h1::after,.intro h1::after,.selected-intro h1::after{
+  content:"";display:block;width:calc(100vw - 40px);max-width:none;
+  border-top:1px solid #171717;margin-top:116px;
+}
+main::after{
+  content:"";display:block;width:100vw;position:relative;left:50%;transform:translateX(-50%);
+  border-top:1px solid #171717;margin-top:100px;
+}
