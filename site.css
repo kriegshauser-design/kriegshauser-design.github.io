@@ -1,5 +1,5 @@
 /* Shared site-wide template styles based on Oracle Redwood Design System Trial. */
-:root{--pad:clamp(16px,2.2vw,32px);--ease:cubic-bezier(.16,.84,.24,1)}
+:root{--pad:40px;--ease:cubic-bezier(.16,.84,.24,1)}
 .bar{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 14px}
 .bar>a{font-size:16px!important}
 .nav{display:flex;gap:clamp(16px,3vw,48px);justify-content:flex-end;align-items:start}
@@ -37,7 +37,7 @@ footer .fine{display:flex;justify-content:space-between;gap:20px;border-top:1px 
   --muted:#5e5e5e;
   --mute:#5e5e5e;
   --line:#d9d2c5;
-  --pad:20px;
+  --pad:40px;
   --ease:cubic-bezier(.16,.84,.24,1);
   color-scheme:light;
   font-family:"Questrial",sans-serif;
@@ -393,3 +393,11 @@ footer .fine a:hover{color:var(--ink,#171717)}
  footer .contact-link{font-size:clamp(26px,7.8vw,42px);line-height:1.12;overflow-wrap:anywhere}
  footer .fine{font-size:12px;padding:10px var(--pad,20px)}
 }
+
+
+/* SITEWIDE PAGE GUTTER — 40px desktop / 20px mobile.
+   All gallery columns remain fluid, so images resize to the new content width. */
+:root{--pad:40px}
+@media(max-width:700px){:root{--pad:20px}}
+.site-intro-rule{width:calc(100% + 80px);margin-left:-40px;margin-right:-40px}
+.title h1::after,.intro h1::after,.selected-intro h1::after{width:calc(100vw - 80px)}
