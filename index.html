@@ -128,6 +128,19 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 
 /* HOMEPAGE PROJECT SYSTEM — scoped to index.html only */
+
+/* Align homepage project media to the same 40px content edge as project headings. */
+.home-page .project{padding-left:40px!important;padding-right:40px!important}
+.home-page .project .head,
+.home-page .project .gallery{width:100%;margin-left:0!important;margin-right:0!important}
+.home-page .project .gallery{padding-left:0!important;padding-right:0!important}
+.home-page .project .gallery>.item{min-width:0}
+.home-page .project .gallery .media,
+.home-page .project .gallery .media img{width:100%;max-width:100%}
+@media(max-width:700px){
+  .home-page .project{padding-left:20px!important;padding-right:20px!important}
+}
+
 .home-page .site-intro{padding-bottom:96px}
 .home-page .project{padding:0 40px 80px;border-top:0}
 .home-page .head{
