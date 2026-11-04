@@ -126,6 +126,52 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 /* Preserve complete image artwork throughout galleries; let each image determine its own height. */
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
+
+/* HOMEPAGE PROJECT SYSTEM — scoped to index.html only */
+.home-page .site-intro{padding-bottom:96px}
+.home-page .project{padding:0 24px 80px;border-top:0}
+.home-page .head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  gap:16px;
+  margin:0 0 8px;
+}
+.home-page .head h2,
+.home-page .project-categories{
+  font-family:"Questrial",Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:1.2;
+  font-weight:400;
+}
+.home-page .head .tags{display:none}
+.home-page .project-categories{justify-self:end;text-align:right;white-space:nowrap;color:var(--ink)}
+.home-page .gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:24px;
+  row-gap:24px;
+}
+.home-page .gallery>.item,
+.home-page .gallery>.item.wide,
+.home-page .gallery>.item.third{
+  display:block;
+  width:100%;
+  margin:0;
+  break-inside:auto;
+}
+.home-page .item figcaption{margin-top:10px;font-size:10px;line-height:1.2}
+@media(max-width:700px){
+  .home-page .site-intro{padding-bottom:64px}
+  .home-page .project{padding:0 20px 56px}
+  .home-page .head{grid-template-columns:1fr;gap:4px;margin-bottom:12px}
+  .home-page .project-categories{justify-self:start;text-align:left;white-space:normal}
+  .home-page .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+}
+@media(max-width:480px){
+  .home-page .gallery{grid-template-columns:1fr}
+}
+
 </style>
 <link rel="stylesheet" href="site.css">
 <style>
@@ -196,7 +242,7 @@ html.js .gallery>.item.done{will-change:auto}
   <article class="project" id="project-1">
     <div class="head">
       <h2>Quantum Brand Evolution</h2>
-      <div class="tags">Brand &amp; Marketing, IBM</div>
+      <div class="tags">Brand &amp; Marketing, IBM</div><div class="project-categories">Brand&nbsp; | &nbsp;Web&nbsp; | &nbsp;Campaign</div>
     </div>
     <div class="gallery"><figure class="item"><div class="media"><img src="images/4b98bc73-15de-45a2-8015-008cabb8a78f_rw_1920.png" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>QBE_01</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="images/f05b3b7b-509f-49e0-b265-27659a4150b8_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_02</span></figcaption></figure>
@@ -208,7 +254,7 @@ html.js .gallery>.item.done{will-change:auto}
   <article class="project" id="project-2">
     <div class="head">
       <h2>Oracle.com Redwood Design System</h2>
-      <div class="tags">Digital and Platform Design, Oracle</div>
+      <div class="tags">Digital and Platform Design, Oracle</div><div class="project-categories">Digital&nbsp; | &nbsp;Product&nbsp; | &nbsp;Web</div>
     </div>
     <div class="gallery"><figure class="item"><div class="media"><img src="images/d0fab1a2-4e5c-4162-b9f8-9aa569abd618_rw_600.gif" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_01</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="images/84075155-a284-480b-8360-31b59cdb98cb_rw_1200.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>ORDS_02</span></figcaption></figure>
@@ -220,7 +266,7 @@ html.js .gallery>.item.done{will-change:auto}
   <article class="project" id="project-3">
     <div class="head">
       <h2>IBM | HBCU Quantum Center</h2>
-      <div class="tags">Brand &amp; Marketing, Howard University | IBM</div>
+      <div class="tags">Brand &amp; Marketing, Howard University | IBM</div><div class="project-categories">Brand&nbsp; | &nbsp;Campaign&nbsp; | &nbsp;Experience</div>
     </div>
     <div class="gallery"><figure class="item"><div class="media"><img src="images/2b6a1e4b-9fbe-46f8-89e2-ab43e2a34eb3_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_01</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="images/7e7c7ec5-b71a-4d0e-9c87-cdb7cb8b0958_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_02</span></figcaption></figure>
@@ -232,7 +278,7 @@ html.js .gallery>.item.done{will-change:auto}
   <article class="project" id="project-4">
     <div class="head">
       <h2>Quantum System One, Cleveland Clinic</h2>
-      <div class="tags">Creative Direction, IBM</div>
+      <div class="tags">Creative Direction, IBM</div><div class="project-categories">Experience&nbsp; | &nbsp;Hardware&nbsp; | &nbsp;Campaign</div>
     </div>
     <div class="gallery"><figure class="item"><div class="media"><img src="images/a556c80b-db46-4d40-84fb-f7a962450104_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QSO_01</span></figcaption></figure>
       <figure class="item"><div class="media"><img src="images/605f7acf-b940-4c3c-8ffd-64ab98deff5b_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QSO_02</span></figcaption></figure>
