@@ -482,3 +482,24 @@ footer .fine{
   footer .contact-link{font-size:clamp(28px,8vw,42px)}
   footer .fine{margin-top:72px}
 }
+
+
+/* FOOTER EDGE ALIGNMENT — match all footer text to the 40px page gutter. */
+footer{padding-left:0!important;padding-right:0!important}
+footer .contact-kicker{
+  margin-left:0!important;margin-right:0!important;
+  padding-left:40px!important;padding-right:40px!important;
+}
+footer .contact-links{
+  padding-left:40px!important;padding-right:40px!important;
+}
+footer .fine{
+  margin-left:0!important;margin-right:0!important;
+  width:100%!important;
+  padding-left:40px!important;padding-right:40px!important;
+}
+@media(max-width:700px){
+  footer .contact-kicker,
+  footer .contact-links,
+  footer .fine{padding-left:20px!important;padding-right:20px!important}
+}
