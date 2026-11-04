@@ -503,3 +503,6 @@ footer .fine{
   footer .contact-links,
   footer .fine{padding-left:20px!important;padding-right:20px!important}
 }
+
+/* NEXT PROJECT component removed sitewide. */
+a.next,.next{display:none!important}
