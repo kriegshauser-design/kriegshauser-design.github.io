@@ -542,3 +542,97 @@ img.image-frame{
  .template-case .template-copy{width:100%;margin-bottom:64px}
  .template-case .template-image img.is-small{max-width:100%}
 }
+
+
+/* PROJECT INTRODUCTION — standardized to the approved project-page redline.
+   Homepage is intentionally excluded; page-level .home-page rules remain untouched. */
+body:not(.home-page) .site-intro{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  column-gap:16px!important;
+  row-gap:0!important;
+  padding:0 30px 94px!important;
+  align-items:start!important;
+}
+body:not(.home-page) .site-intro-title{
+  grid-column:1/-1!important;
+  min-height:0!important;
+  display:block!important;
+  padding:172px 0 0!important;
+  margin:0!important;
+}
+body:not(.home-page) .site-intro-title h1,
+body:not(.home-page) .site-intro-title{
+  font-family:"Questrial",sans-serif!important;
+  font-size:88px!important;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+  font-weight:400!important;
+}
+body:not(.home-page) .site-intro-title h1{margin:0!important;max-width:none!important}
+body:not(.home-page) .site-intro-rule{
+  grid-column:1/-1!important;
+  width:calc(100% + 60px)!important;
+  margin:116px -30px 30px!important;
+  border-top:1px solid #171717!important;
+}
+body:not(.home-page) .site-intro-meta{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:20px!important;
+  font-family:"Questrial",sans-serif!important;
+  font-size:16px!important;
+  line-height:1.25!important;
+}
+body:not(.home-page) .site-intro-meta-one{grid-column:1!important}
+body:not(.home-page) .site-intro-meta-two{grid-column:2!important}
+body:not(.home-page) .site-intro-meta dl{margin:0!important;display:grid!important;gap:2px!important}
+body:not(.home-page) .site-intro-meta dt,
+body:not(.home-page) .site-intro-meta dd{font-size:16px!important;line-height:1.25!important;font-weight:400!important}
+body:not(.home-page) .site-intro-meta-two dl:last-child dd{columns:2;column-gap:22px}
+body:not(.home-page) .site-intro-description{
+  grid-column:3/5!important;
+  max-width:none!important;
+  font-family:"Questrial",sans-serif!important;
+  font-size:24px!important;
+  line-height:1.5!important;
+  margin:0!important;
+}
+body:not(.home-page) .site-intro-description p{font-size:24px!important;line-height:1.5!important;margin:0!important}
+body:not(.home-page) .site-intro-description p+p{margin-top:.7em!important}
+@media(max-width:700px){
+ body:not(.home-page) .site-intro{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:0 20px 64px!important;column-gap:14px!important}
+ body:not(.home-page) .site-intro-title{padding-top:140px!important}
+ body:not(.home-page) .site-intro-title h1,body:not(.home-page) .site-intro-title{font-size:clamp(42px,9vw,64px)!important}
+ body:not(.home-page) .site-intro-rule{width:calc(100% + 40px)!important;margin:72px -20px 24px!important}
+ body:not(.home-page) .site-intro-meta-one{grid-column:1!important}
+ body:not(.home-page) .site-intro-meta-two{grid-column:2!important}
+ body:not(.home-page) .site-intro-meta-two dl:last-child dd{columns:1}
+ body:not(.home-page) .site-intro-description{grid-column:1/-1!important;font-size:18px!important;line-height:1.4!important;margin-top:24px!important}
+ body:not(.home-page) .site-intro-description p{font-size:18px!important;line-height:1.4!important}
+}
+/* Legacy project intro patterns brought into the same shared grid. */
+body:not(.home-page) main>.title,
+body:not(.home-page) main>.case-heading{padding:172px 30px 0!important;margin:0!important;min-height:0!important;border:0!important}
+body:not(.home-page) main>.title h1,
+body:not(.home-page) main>.case-heading h1{font-family:"Questrial",sans-serif!important;font-size:88px!important;line-height:1.02!important;letter-spacing:-.035em!important;font-weight:400!important;margin:0!important}
+body:not(.home-page) main>.project-overview,
+body:not(.home-page) main>.case-information{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;column-gap:16px!important;row-gap:0!important;padding:0 30px 94px!important;margin:116px 0 0!important;border:0!important}
+body:not(.home-page) main>.project-overview:before,
+body:not(.home-page) main>.case-information:before{content:"";grid-column:1/-1;border-top:1px solid #171717;margin:0 -30px 30px}
+body:not(.home-page) .project-overview .overview-left,
+body:not(.home-page) .case-information .case-credits{grid-column:1!important;display:grid!important;gap:20px!important}
+body:not(.home-page) .project-overview .overview-right{grid-column:2!important;display:grid!important;gap:20px!important}
+body:not(.home-page) .project-overview .overview-description,
+body:not(.home-page) .case-information .info-copy{grid-column:3/5!important;font-family:"Questrial",sans-serif!important;font-size:24px!important;line-height:1.5!important;max-width:none!important}
+body:not(.home-page) .project-overview dl,
+body:not(.home-page) .case-information dl{font-family:"Questrial",sans-serif!important;font-size:16px!important;line-height:1.25!important}
+body:not(.home-page) .project-overview dt,body:not(.home-page) .project-overview dd,
+body:not(.home-page) .case-information dt,body:not(.home-page) .case-information dd{font-size:16px!important;line-height:1.25!important}
+@media(max-width:700px){
+ body:not(.home-page) main>.title,body:not(.home-page) main>.case-heading{padding:140px 20px 0!important}
+ body:not(.home-page) main>.title h1,body:not(.home-page) main>.case-heading h1{font-size:clamp(42px,9vw,64px)!important}
+ body:not(.home-page) main>.project-overview,body:not(.home-page) main>.case-information{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:0 20px 64px!important;margin-top:72px!important}
+ body:not(.home-page) main>.project-overview:before,body:not(.home-page) main>.case-information:before{margin:0 -20px 24px}
+ body:not(.home-page) .project-overview .overview-description,body:not(.home-page) .case-information .info-copy{grid-column:1/-1!important;font-size:18px!important;line-height:1.4!important;margin-top:24px}
+}
