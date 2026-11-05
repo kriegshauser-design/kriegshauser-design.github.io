@@ -506,3 +506,22 @@ footer .fine{
 
 /* NEXT PROJECT component removed sitewide. */
 a.next,.next{display:none!important}
+
+/* Images are unframed sitewide: no border, padding, background, or shadow. */
+img,
+.page-image,
+.image-frame,
+.page-image.image-frame,
+img.page-image,
+img.image-frame{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+.page-image.image-frame,
+.page-image,
+.image-frame{
+  padding:0!important;
+  background:transparent!important;
+}
