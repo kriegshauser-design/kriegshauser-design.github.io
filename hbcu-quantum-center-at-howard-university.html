@@ -131,10 +131,22 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 /* Preserve complete image artwork throughout galleries; let each image determine its own height. */
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
+
+/* HBCU Quantum Center image groupings within the shared case-study sequence. */
+.hbcu-template-case .template-image{width:100%;min-width:0}
+.hbcu-template-case .template-image img{width:100%;height:auto;max-width:100%;display:block;object-fit:contain;object-position:left}
+.hbcu-template-case .hbcu-image-pair,.hbcu-template-case .hbcu-image-trio{display:grid;align-items:start;gap:40px;margin:0 0 clamp(80px,12vw,140px)}
+.hbcu-template-case .hbcu-image-pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hbcu-template-case .hbcu-image-trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hbcu-template-case .hbcu-image-pair .template-image,.hbcu-template-case .hbcu-image-trio .template-image{margin:0}
+.hbcu-template-case .hbcu-wide-image{margin-bottom:clamp(80px,12vw,140px)}
+.hbcu-template-case .hbcu-final-image{width:50%;margin-bottom:clamp(80px,12vw,140px)}
+.hbcu-template-case .template-copy{width:50%;max-width:620px}
+@media(max-width:700px){.hbcu-template-case .hbcu-image-pair,.hbcu-template-case .hbcu-image-trio{grid-template-columns:1fr;gap:20px;margin-bottom:64px}.hbcu-template-case .template-copy{width:100%}.hbcu-template-case .hbcu-final-image{width:100%}.hbcu-template-case .hbcu-wide-image{margin-bottom:64px}}
 </style>
 <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="template-case-page">
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
@@ -176,37 +188,30 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   </nav>
 </header>
 
-<main id="top"><section class="site-intro" aria-label="Project introduction">
- <div class="site-intro-title"><h1>IBM | HBCU Quantum Center</h1></div>
- <div class="site-intro-rule"></div>
- <div class="site-intro-meta site-intro-meta-one"><dl><div><dt>Client</dt><dd>Howard University | IBM</dd></div><div><dt>Year</dt><dd>2023</dd></div></dl></div>
- <div class="site-intro-meta site-intro-meta-two"><dl><div><dt>Role</dt><dd>Creative Director</dd></div><div><dt>Howard University Student Design Team</dt><dd>Keme Arigbe<br>Dymier Steel<br>Amiyah Brown<br>Emari Baker<br>Michelai Lowe</dd></div></dl></div>
- <div class="site-intro-description">
-      <p>The IBM | HBCU Quantum Center is a partnership between IBM and Howard University that cultivates diverse talent in the rapidly evolving field of quantum computing. Unlike many industries with entrenched hiring biases, quantum computing offers an inclusive environment where people from all backgrounds can thrive. As a new entity on the Howard campus, the center needed a brand and visual identity to expand its reach across HBCUs and support its goals.</p>
-      <p>As creative director, I led a unique project that combined student talent with IBM Design Thinking to develop a groundbreaking brand for the HBCU Quantum Center. Collaborating with student designers, we created a brand that embodies opportunity and equity, reflecting the energy and potential of a new generation in this transformative field.</p>
-    </div>
- </section>
-  <!-- EDIT: project title -->
-  
-
-  <!-- EDIT: facts + description -->
-  
-
-  <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
-  <section class="gallery pad">
-      <figure class="item full"><div class="media"><img src="/images/2b6a1e4b-9fbe-46f8-89e2-ab43e2a34eb3_rw_1920.png" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>HQC_01</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/7e7c7ec5-b71a-4d0e-9c87-cdb7cb8b0958_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_02</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/39f28f46-2d01-4972-b6f7-e318e11cc8cc_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_03</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/cdab108f-d12c-491d-9917-8bea56451588_rw_3840.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_04</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/cd7187f1-3592-4dd9-bef2-b57467633382_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_05</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/7ad31eaa-dd37-44e8-98bf-11b91c02498d_rw_3840.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_06</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/a0368a2e-073e-485a-ba1e-dfcef6312e0a_rw_3840.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_07</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/5b095ae2-529b-4b8a-972f-0ad851b9efd1_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>HQC_08</span></figcaption></figure>
-  </section>
-
-  <!-- EDIT: next project link -->
-  <a class="next" href="ibm-quantum-visual-identity.html"><small>Next project</small><span>IBM Quantum Visual Identity</span></a>
-</main>
+<main id="top" class="template-page">
+<section class="site-intro" aria-label="Project introduction">
+<div class="site-intro-title"><h1>IBM | HBCU Quantum Center</h1></div><div class="site-intro-rule"></div>
+<div class="site-intro-meta site-intro-meta-one"><dl><dt>Client</dt><dd>Howard University | IBM</dd></dl><dl><dt>Year</dt><dd>2023</dd></dl></div>
+<div class="site-intro-meta site-intro-meta-two"><dl><dt>Role</dt><dd>Creative Director</dd></dl><dl><dt>Howard University Student Design Team</dt><dd>Keme Arigbe<br>Dymier Steel<br>Amiyah Brown<br>Emari Baker<br>Michelai Lowe</dd></dl></div>
+<div class="site-intro-description"></div></section>
+<section class="template-case hbcu-template-case" aria-label="HBCU Quantum Center case study">
+<figure class="template-image hbcu-lead-image"><img src="/images/2b6a1e4b-9fbe-46f8-89e2-ab43e2a34eb3_rw_1920.png" alt="HBCU Quantum Center brand identity" loading="eager" fetchpriority="high" decoding="async"></figure>
+<section class="template-copy"><h2>Challenge</h2><p>When the IBM | HBCU Quantum Center moved beyond the Howard University name and brand, it was left without a distinct identity or the brand support needed to build recognition. Since its inception, the organization lacked a cohesive visual system to create consistent communications and experiences across its growing network of HBCUs, students, researchers, and industry partners.</p></section>
+<div class="hbcu-image-pair" aria-label="HBCU Quantum Center identity applications">
+<figure class="template-image"><img src="/images/7e7c7ec5-b71a-4d0e-9c87-cdb7cb8b0958_rw_3840.jpg" alt="HBCU Quantum Center brand application" loading="lazy" decoding="async"></figure>
+<figure class="template-image"><img src="/images/39f28f46-2d01-4972-b6f7-e318e11cc8cc_rw_1920.jpg" alt="HBCU Quantum Center visual identity application" loading="lazy" decoding="async"></figure>
+</div>
+<section class="template-copy"><h2>Solution</h2><p>Build a distinct brand that could represent the HBCU Quantum Center’s broader mission: advancing the impact of Black people in quantum computing. The identity needed to bring consistency to the organization while expressing its commitment to mentorship, scholarship, and expertise—and its ambition to develop the next generation of leaders in the field.</p></section>
+<div class="hbcu-image-trio" aria-label="HBCU Quantum Center identity system">
+<figure class="template-image"><img src="/images/cdab108f-d12c-491d-9917-8bea56451588_rw_3840.png" alt="HBCU Quantum Center identity system" loading="lazy" decoding="async"></figure>
+<figure class="template-image"><img src="/images/cd7187f1-3592-4dd9-bef2-b57467633382_rw_1920.png" alt="HBCU Quantum Center brand materials" loading="lazy" decoding="async"></figure>
+<figure class="template-image"><img src="/images/7ad31eaa-dd37-44e8-98bf-11b91c02498d_rw_3840.png" alt="HBCU Quantum Center brand applications" loading="lazy" decoding="async"></figure>
+</div>
+<section class="template-copy"><h2>Approach</h2><p>IBM Quantum Design partnered with a group of Howard University students to develop the brand through a series of design sprints aligned with their fall and spring academic semesters. I guided the students through the principles of enterprise branding, marketing design, and product design, creating a collaborative process that paired practical instruction with the work of building a functioning brand. Together, we developed an identity and design foundation the organization could use to communicate consistently and grow beyond a single university.</p></section>
+<figure class="template-image hbcu-wide-image"><img src="/images/a0368a2e-073e-485a-ba1e-dfcef6312e0a_rw_3840.png" alt="HBCU Quantum Center brand experience" loading="lazy" decoding="async"></figure>
+<figure class="template-image hbcu-final-image"><img src="/images/5b095ae2-529b-4b8a-972f-0ad851b9efd1_rw_3840.jpg" alt="HBCU Quantum Center visual identity detail" loading="lazy" decoding="async"></figure>
+<section class="template-copy template-outcome"><h2>Outcome</h2><p>The HBCU Quantum Center gained a distinct brand foundation to support its mission and represent a program created for the broader HBCU community. The collaboration also gave participating students hands-on experience applying enterprise branding, marketing, and product design principles to a real organization—helping prepare them to contribute to the future of the quantum computing industry.</p></section>
+</section></main>
 
 <!-- EDIT: contact + links -->
 <footer id="contact" class="site-footer"><div class="contact-kicker">Contact</div><div class="contact-links"><a class="contact-link" href="tel:+15129230607">+1 512 923 0607</a><a class="contact-link" href="mailto:heykriegs@gmail.com">HEYKRIEGS@GMAIL.COM</a><a class="contact-link" href="https://www.instagram.com/heykriegs/">Instagram</a><a class="contact-link" href="https://www.linkedin.com/in/heykriegs">LinkedIn</a></div><div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to Top ↑</a></div></footer>
