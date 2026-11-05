@@ -525,3 +525,20 @@ img.image-frame{
   padding:0!important;
   background:transparent!important;
 }
+
+
+/* Dell project case-study wireframe: intro, Challenge, Solution, Approach, outcome. */
+.template-case{padding:0 var(--pad);display:flex;flex-direction:column;gap:0}
+.template-case .template-image{margin:0 0 clamp(80px,12vw,140px);width:100%;min-width:0}
+.template-case .template-image img{display:block;width:auto;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:left}
+.template-case .template-image img.is-small{max-width:50%}
+.template-case .template-copy{width:50%;max-width:620px;padding:0;margin:0 0 clamp(80px,12vw,140px);font-size:16px;line-height:1.45}
+.template-case .template-copy h2{font-size:16px;line-height:1.3;font-weight:400;margin:0 0 12px}
+.template-case .template-copy p{margin:0}
+.template-case .template-outcome{margin-bottom:0}
+@media(max-width:700px){
+ .template-case{padding-left:var(--pad);padding-right:var(--pad)}
+ .template-case .template-image{margin-bottom:64px}
+ .template-case .template-copy{width:100%;margin-bottom:64px}
+ .template-case .template-image img.is-small{max-width:100%}
+}
