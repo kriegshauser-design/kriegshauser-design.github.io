@@ -250,10 +250,12 @@ html.js .gallery>.item.done{will-change:auto}
 .review-home .nav{gap:clamp(18px,3vw,46px);font-size:13px}
 .review-home .dd>button::after{width:4px;height:4px}
 .review-home .review-hero{height:700px;padding:168px 25px 0;display:block}
-.review-home .review-headline{display:flex;align-items:flex-start;gap:10px}
-.review-home .review-headline h1{font-family:"Questrial",sans-serif;font-size:88px;line-height:.98;letter-spacing:-.045em;font-weight:400}
-.review-home .review-headline img{display:block;width:21px;height:auto;margin-top:10px}
-.review-home .review-hero p{max-width:570px;margin-top:8px;font-size:20px;line-height:1.32}
+.review-home .review-headline,
+.review-home .review-hero p{width:50%;max-width:none}
+.review-home .review-headline{display:flex;align-items:flex-start;gap:clamp(6px,.7vw,10px)}
+.review-home .review-headline h1{font-family:"Questrial",sans-serif;font-size:clamp(42px,6.1vw,88px);line-height:.98;letter-spacing:-.045em;font-weight:400}
+.review-home .review-headline img{display:block;width:clamp(12px,1.46vw,21px);height:auto;margin-top:clamp(5px,.7vw,10px);flex:0 0 auto}
+.review-home .review-hero p{margin-top:8px;font-size:clamp(16px,1.4vw,20px);line-height:1.32}
 .review-home .project{padding:0 25px 70px;border:0}
 .review-home .project .head{grid-template-columns:1fr 1fr 2fr;gap:16px;margin:0 0 8px;font-size:13px}
 .review-home .project .head h2{font-size:14px}
@@ -267,6 +269,10 @@ html.js .gallery>.item.done{will-change:auto}
  .review-home .review-headline h1{font-size:clamp(54px,9vw,88px)}
  .review-home .project{padding-left:20px;padding-right:20px}
  .review-home .project .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:768px){
+ .review-home .review-headline,
+ .review-home .review-hero p{width:100%}
 }
 @media(max-width:700px){
  .review-home .review-hero{height:540px;padding-top:140px}
