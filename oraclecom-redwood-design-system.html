@@ -10,20 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-:root{--page-bg:#faf6ed;--page-ink:#171717;--page-muted:#5e5e5e;--page-pad:20px}
-html,body{background:var(--page-bg);color:var(--page-ink);font-family:"Questrial",sans-serif}
-body{font-size:15px;line-height:1.4}
+html,body{background:var(--bg);color:var(--ink)}
+
 main{width:100%;overflow:hidden}
-.title{padding:260px var(--page-pad) 26px;min-height:0;display:block;border:0}
+.title{padding:260px var(--pad) 26px;min-height:0;display:block;border:0}
 .title h1{font-size:clamp(30px,4.2vw,58px);line-height:.98;letter-spacing:-.035em;font-weight:400;max-width:13ch}
-.project-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:22px var(--page-pad) 48px;border:0;align-items:start}
+.project-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:22px var(--pad) 48px;border:0;align-items:start}
 .project-overview .overview-left{display:grid;grid-column:1/2;gap:20px}
 .project-overview .overview-right{display:grid;grid-column:2/3;gap:20px}
 .project-overview dl{display:grid;gap:3px}
-.project-overview dt{font-size:12px;color:var(--page-muted)}
+.project-overview dt{font-size:12px;color:var(--muted)}
 .project-overview dd{margin:0;font-size:14px}
 .project-overview .overview-description{grid-column:3/5;font-size:15px;line-height:1.4;max-width:54ch}
-.page-section{padding:0 var(--page-pad);margin:0 0 64px}
+.page-section{padding:0 var(--pad);margin:0 0 64px}
 .page-copy{width:50%;max-width:560px;font-size:15px;line-height:1.4}
 .page-copy h2{font-size:clamp(17px,1.8vw,24px);font-weight:400;line-height:1.1;margin-bottom:12px;letter-spacing:-.02em}
 .page-copy p+p{margin-top:.8em}
