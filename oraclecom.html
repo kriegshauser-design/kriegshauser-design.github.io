@@ -10,14 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#fcfaf7; --ink:#1c1e1e; --mute:rgba(28,30,30,.55); --line:rgba(28,30,30,.16);
-  --pad:clamp(16px,2.2vw,32px);
-  --ease:cubic-bezier(.16,.84,.24,1);
-  color-scheme:light;
-  font-family:"Questrial",Helvetica,Arial,sans-serif;font-synthesis:none;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
-}
+
 *,*::before,*::after{box-sizing:inherit}
 *{margin:0}
 html,body{background:var(--bg)}
@@ -36,18 +29,18 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 .dd{position:relative}
 .dd>button{display:inline-flex;align-items:center;gap:6px}
 .dd>button::after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 1px 1px 0;
-  transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}
+  transform:translateY(-2px) rotate(45deg);}
 .dd.open>button::after{transform:translateY(1px) rotate(-135deg)}
 .panel{position:absolute;right:0;top:calc(100% + 14px);min-width:240px;background:var(--bg);
   border:1px solid var(--line);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-6px);
-  transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s .25s}
-.dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
+  }
+.dd.open .panel{opacity:1;visibility:visible;transform:none;}
 .panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}
 .panel{max-height:70svh;overflow:auto}
 .panel a span{color:var(--mute)}
 .panel a:hover{background:rgba(28,30,30,.05)}
 @media (hover:hover) and (min-width:701px){
-  .dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
+  .dd:hover .panel{opacity:1;visibility:visible;transform:none;}
   .dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}
 }
 @media(max-width:700px){
@@ -82,9 +75,9 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 .item figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:13px}
 
 /* image reveal: the frame wipes open from the bottom while the media settles from a slight zoom */
-.js .item .media{clip-path:inset(100% 0 0 0);transition:clip-path 1.2s var(--ease)}
-.js .item .media>*{transform:scale(1.18);transition:transform 1.6s var(--ease)}
-.js .item figcaption{opacity:0;transform:translateY(10px);transition:opacity .8s var(--ease) .35s,transform .8s var(--ease) .35s}
+.js .item .media{clip-path:inset(100% 0 0 0);}
+.js .item .media>*{transform:scale(1.18);}
+.js .item figcaption{opacity:0;transform:translateY(10px);}
 .js .item.in .media{clip-path:inset(0)}
 .js .item.in .media>*{transform:none}
 .js .item.in figcaption{opacity:1;transform:none}
