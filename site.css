@@ -647,3 +647,34 @@ body:not(.home-page) .case-information dt,body:not(.home-page) .case-information
  body:not(.home-page) main>.project-overview:before,body:not(.home-page) main>.case-information:before{margin:0 -20px 24px}
  body:not(.home-page) .project-overview .overview-description,body:not(.home-page) .case-information .info-copy{grid-column:1/-1!important;font-size:18px!important;line-height:1.4!important;margin-top:24px}
 }
+
+
+/* MOBILE NAV DROPDOWN FIX
+   Keep submenu links visible when an accordion category is expanded.
+   These overrides intentionally come last to win over legacy page-level nav styles. */
+@media(max-width:1024px){
+  .bar.menu-open .nav .dd{position:static!important}
+  .bar.menu-open .nav .dd.open>.panel{
+    display:block!important;
+    position:static!important;
+    inset:auto!important;
+    width:100%!important;
+    min-width:0!important;
+    max-height:none!important;
+    overflow:visible!important;
+    padding:12px 0 0!important;
+    border:0!important;
+    background:transparent!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+  .bar.menu-open .nav .dd:not(.open)>.panel{display:none!important}
+  .bar.menu-open .nav .dd.open>.panel a{
+    display:flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    padding:10px 0!important;
+    white-space:normal!important;
+  }
+}
