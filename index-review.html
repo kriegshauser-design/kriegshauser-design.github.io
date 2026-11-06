@@ -253,7 +253,7 @@ html.js .gallery>.item.done{will-change:auto}
 .review-home .review-headline,
 .review-home .review-hero p{width:50%;max-width:none}
 .review-home .review-headline{display:flex;align-items:flex-start;gap:clamp(6px,.7vw,10px)}
-.review-home .review-headline h1{font-family:"Questrial",sans-serif;font-size:clamp(42px,6.1vw,88px);line-height:.98;letter-spacing:-.045em;font-weight:400}
+.review-home .review-headline h1{font-family:"Questrial",sans-serif;font-size:clamp(42px,6.1vw,88px);line-height:.98;letter-spacing:-.045em;font-weight:400;white-space:nowrap;flex:0 0 88%;width:88%}
 .review-home .review-headline img{display:block;width:clamp(12px,1.46vw,21px);height:auto;margin-top:clamp(5px,.7vw,10px);flex:0 0 auto}
 .review-home .review-hero p{margin-top:8px;font-size:clamp(16px,1.4vw,20px);line-height:1.32}
 .review-home .project{padding:0 25px 70px;border:0}
@@ -388,6 +388,27 @@ html.js .gallery>.item.done{will-change:auto}
 
 <script>
 document.documentElement.classList.add('js');
+
+// Fit the PRACTICED word to 88% of its headline column at every viewport size.
+(function(){
+  var heading=document.querySelector('.review-headline h1');
+  var column=document.querySelector('.review-headline');
+  if(!heading||!column)return;
+  function fit(){
+    var style=getComputedStyle(heading);
+    var base=parseFloat(style.fontSize);
+    var canvas=document.createElement('canvas');
+    var ctx=canvas.getContext('2d');
+    ctx.font=style.fontWeight+' '+base+'px '+style.fontFamily;
+    var letterSpacing=parseFloat(style.letterSpacing)||0;
+    var measured=ctx.measureText(heading.textContent.trim()).width+letterSpacing*Math.max(0,heading.textContent.trim().length-1);
+    var target=column.clientWidth*.88;
+    if(measured>0)heading.style.fontSize=(base*target/measured)+'px';
+  }
+  if('ResizeObserver' in window)new ResizeObserver(fit).observe(column);
+  window.addEventListener('load',fit);
+  fit();
+})();
 
 // Dropdowns: click/tap toggles, outside click or Escape closes, only one open at a time
 (function(){
