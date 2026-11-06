@@ -4,6 +4,7 @@
   --muted:#444444;
   --mute:var(--muted);
   --line:rgba(23,23,23,.22);
+  --hover-bg:rgba(23,23,23,.05);
   --pad:40px;
   --ease:cubic-bezier(.16,.84,.24,1);
   color-scheme:light;
@@ -32,7 +33,7 @@ a,button{transition:color .25s var(--ease),opacity .25s var(--ease)}
 .dd.open .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}
 .panel a{display:flex;justify-content:space-between;gap:24px;padding:8px 16px;white-space:nowrap}
 .panel a span{color:var(--mute)}
-.panel a:hover{background:rgba(28,30,30,.05)}
+.panel a:hover{background:var(--hover-bg)}
 @media(hover:hover) and (min-width:701px){.dd:hover .panel{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--ease),visibility 0s}.dd:hover>button::after{transform:translateY(1px) rotate(-135deg)}}
 @media(max-width:700px){.nav{flex-wrap:wrap;gap:8px 18px}.dd{position:static}.panel{left:var(--pad);right:var(--pad);top:100%;min-width:0}}
 .menu-toggle{display:none;align-items:center;justify-content:center;width:32px;height:24px;position:relative;z-index:31}
