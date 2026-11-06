@@ -155,6 +155,11 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 </style>
 <link rel="stylesheet" href="site.css">
+<style>
+.quantum-summit-video{width:100%;margin:clamp(80px,12vw,140px) 0; padding:0 var(--pad);}
+.quantum-summit-video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;}
+.quantum-summit-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
+</style>
 </head>
 <body>
 
@@ -220,6 +225,12 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
       <figure class="item offset tall"><div class="media"><img src="/images/39da040b-22fe-4051-a6d6-f006f69f0601_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QS_03</span></figcaption></figure>
       <figure class="item third"><div class="media"><img src="/images/88538ab1-1257-412c-b639-55ab818a39d8_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QS_04</span></figcaption></figure>
       <figure class="item third"><div class="media"><img src="/images/1705332e-0399-48d6-8497-100fc8e9c9c9_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QS_05</span></figcaption></figure>
+  </section>
+
+  <section class="quantum-summit-video" aria-label="IBM Quantum Summit video">
+    <div class="quantum-summit-video-frame">
+      <iframe width="1440" height="810" src="https://www.youtube.com/embed/-qBrLqvESNM?si=afg1s1gcl4-bRPWg" title="IBM Quantum Summit video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
   </section>
 
   <!-- EDIT: next project link -->
