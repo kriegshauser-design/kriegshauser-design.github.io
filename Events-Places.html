@@ -131,6 +131,28 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 /* Preserve complete image artwork throughout galleries; let each image determine its own height. */
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
+
+/* Events and Places: four-up project rows, following the homepage project-heading treatment. */
+.events-project-list{padding:0 var(--pad) calc(var(--pad)*3)}
+.events-row{padding:0 0 calc(var(--pad)*2);margin:0 0 calc(var(--pad)*2);border-bottom:1px solid var(--line)}
+.events-row-head{display:grid;grid-template-columns:1fr auto;align-items:start;gap:16px;margin:0 0 16px}
+.events-row-head h2,.events-row-head p{font:inherit;line-height:1.2}
+.events-row-head p{color:var(--mute);text-align:right}
+.events-row-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pad)}
+.events-row-gallery .item{grid-column:auto!important;min-width:0}
+.events-row-gallery .item .media,
+.events-row-gallery .item.full .media,
+.events-row-gallery .item.tall .media,
+.events-row-gallery .item.third .media{aspect-ratio:4/5!important}
+@media(max-width:700px){
+ .events-row-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .events-row-head{grid-template-columns:1fr auto}
+}
+@media(max-width:420px){
+ .events-row-gallery{grid-template-columns:1fr}
+ .events-row-head{grid-template-columns:1fr}
+ .events-row-head p{text-align:left}
+}
 </style>
   <link rel="stylesheet" href="site.css">
 </head>
@@ -192,31 +214,49 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img loading="eager" fetchpriority="high" decoding="async"> or <video>. -->
-  <section class="gallery pad">
-      <figure class="item full"><div class="media"><img src="/images/3efebba3-1ba5-424b-920f-42f5dbd57a5b_rw_1920.jpg" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>3efebba3-1ba5-424b-920f-42f5dbd57a5b_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/eb60b067-e717-4cbd-a016-d1e3d2734d53_rw_3840.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>eb60b067-e717-4cbd-a016-d1e3d2734d53_rw_3840.png</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/13b22f71-8e91-4e2e-b813-21942e6cfb55_rw_1920.jpeg" alt="" loading="lazy" decoding="async"></div><figcaption><span>13b22f71-8e91-4e2e-b813-21942e6cfb55_rw_1920.jpeg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/7626b7ab-b58f-4ff0-abea-91e638942b2b_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>7626b7ab-b58f-4ff0-abea-91e638942b2b_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/613a8f05-0dbf-4767-8227-33c138bc6ef8_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div><figcaption><span>613a8f05-0dbf-4767-8227-33c138bc6ef8_rw_3840.JPG</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/1ff5a6ca-d1bc-498e-8bd8-8446654b994f_rw_1200.jpeg" alt="" loading="lazy" decoding="async"></div><figcaption><span>1ff5a6ca-d1bc-498e-8bd8-8446654b994f_rw_1200.jpeg</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/51ffc170-4cef-433f-aa8d-df41590882a1_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div><figcaption><span>51ffc170-4cef-433f-aa8d-df41590882a1_rw_3840.JPG</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/b7e5e83d-b0d6-44f5-83b1-4e9cbee60885_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>b7e5e83d-b0d6-44f5-83b1-4e9cbee60885_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/90f7bfbc-d9ea-4593-882b-62484f11c3d6_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>90f7bfbc-d9ea-4593-882b-62484f11c3d6_rw_3840.jpg</span></figcaption></figure>
-      <figure class="item full"><div class="media"><img src="/images/3f3e59a7-9c0b-473c-a25b-4b74531c30cb_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>3f3e59a7-9c0b-473c-a25b-4b74531c30cb_rw_3840.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/645eae8e-e478-4787-b84e-325a03d3c375_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div><figcaption><span>645eae8e-e478-4787-b84e-325a03d3c375_rw_3840.JPG</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/4b8aa106-df8f-4b2b-99a1-0d31768a61d7_rw_1920.jpeg" alt="" loading="lazy" decoding="async"></div><figcaption><span>4b8aa106-df8f-4b2b-99a1-0d31768a61d7_rw_1920.jpeg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/96dc83cb-cb30-4a53-93f6-62fe2cb57eb1_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div><figcaption><span>96dc83cb-cb30-4a53-93f6-62fe2cb57eb1_rw_3840.JPG</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/62760721-5a18-4d99-bb4a-0fea2710b1c8_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>62760721-5a18-4d99-bb4a-0fea2710b1c8_rw_3840.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/e9832c11-1efc-407f-8206-0bc3a927d783_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>e9832c11-1efc-407f-8206-0bc3a927d783_rw_3840.jpg</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/cbe65118-ee50-4d28-bc8f-5bda8634409e_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>cbe65118-ee50-4d28-bc8f-5bda8634409e_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/08f17691-76e6-45f3-a2d6-8a2faa737c2a_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>08f17691-76e6-45f3-a2d6-8a2faa737c2a_rw_3840.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/e7919372-3f4a-4c3c-ba9c-e1efa83f5a66_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>e7919372-3f4a-4c3c-ba9c-e1efa83f5a66_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item full"><div class="media"><img src="/images/4ef9f626-b183-41a6-b5e2-68121acb3966_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>4ef9f626-b183-41a6-b5e2-68121acb3966_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/b1d5e021-57fa-48e3-9533-2f1efe57a4c3_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>b1d5e021-57fa-48e3-9533-2f1efe57a4c3_rw_3840.jpg</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/a2e5acb5-fca9-4070-aded-04d2dabe241b_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>a2e5acb5-fca9-4070-aded-04d2dabe241b_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/35c29e0f-2b3b-4e0c-8650-afe649483c85_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>35c29e0f-2b3b-4e0c-8650-afe649483c85_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/b73b209e-c033-4759-8dbb-27aa6f7a60a8_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div><figcaption><span>b73b209e-c033-4759-8dbb-27aa6f7a60a8_rw_1920.jpg</span></figcaption></figure>
-  </section>
+  <div class="events-project-list">
+<section class="events-row">
+  <header class="events-row-head"><h2>Project title</h2><p>Work category</p></header>
+  <div class="events-row-gallery"><figure class="item"><div class="media"><img src="/images/3efebba3-1ba5-424b-920f-42f5dbd57a5b_rw_1920.jpg" alt="" loading="eager" fetchpriority="high" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/eb60b067-e717-4cbd-a016-d1e3d2734d53_rw_3840.png" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/13b22f71-8e91-4e2e-b813-21942e6cfb55_rw_1920.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/7626b7ab-b58f-4ff0-abea-91e638942b2b_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure></div>
+ </section>
+<section class="events-row">
+  <header class="events-row-head"><h2>Project title</h2><p>Work category</p></header>
+  <div class="events-row-gallery"><figure class="item"><div class="media"><img src="/images/613a8f05-0dbf-4767-8227-33c138bc6ef8_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/1ff5a6ca-d1bc-498e-8bd8-8446654b994f_rw_1200.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/51ffc170-4cef-433f-aa8d-df41590882a1_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/b7e5e83d-b0d6-44f5-83b1-4e9cbee60885_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure></div>
+ </section>
+<section class="events-row">
+  <header class="events-row-head"><h2>Project title</h2><p>Work category</p></header>
+  <div class="events-row-gallery"><figure class="item"><div class="media"><img src="/images/90f7bfbc-d9ea-4593-882b-62484f11c3d6_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/3f3e59a7-9c0b-473c-a25b-4b74531c30cb_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/645eae8e-e478-4787-b84e-325a03d3c375_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/4b8aa106-df8f-4b2b-99a1-0d31768a61d7_rw_1920.jpeg" alt="" loading="lazy" decoding="async"></div></figure></div>
+ </section>
+<section class="events-row">
+  <header class="events-row-head"><h2>Project title</h2><p>Work category</p></header>
+  <div class="events-row-gallery"><figure class="item"><div class="media"><img src="/images/96dc83cb-cb30-4a53-93f6-62fe2cb57eb1_rw_3840.JPG" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/62760721-5a18-4d99-bb4a-0fea2710b1c8_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/e9832c11-1efc-407f-8206-0bc3a927d783_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/cbe65118-ee50-4d28-bc8f-5bda8634409e_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure></div>
+ </section>
+<section class="events-row">
+  <header class="events-row-head"><h2>Project title</h2><p>Work category</p></header>
+  <div class="events-row-gallery"><figure class="item"><div class="media"><img src="/images/08f17691-76e6-45f3-a2d6-8a2faa737c2a_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/e7919372-3f4a-4c3c-ba9c-e1efa83f5a66_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/4ef9f626-b183-41a6-b5e2-68121acb3966_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/b1d5e021-57fa-48e3-9533-2f1efe57a4c3_rw_3840.jpg" alt="" loading="lazy" decoding="async"></div></figure></div>
+ </section>
+<section class="events-row">
+  <header class="events-row-head"><h2>Project title</h2><p>Work category</p></header>
+  <div class="events-row-gallery"><figure class="item"><div class="media"><img src="/images/a2e5acb5-fca9-4070-aded-04d2dabe241b_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/35c29e0f-2b3b-4e0c-8650-afe649483c85_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+<figure class="item"><div class="media"><img src="/images/b73b209e-c033-4759-8dbb-27aa6f7a60a8_rw_1920.jpg" alt="" loading="lazy" decoding="async"></div></figure></div>
+ </section>
+</div>
 
   <!-- EDIT: next project link -->
   <a class="next" href="video-creative-direction.html"><small>Next project</small><span>Video Creative Direction</span></a>
