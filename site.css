@@ -678,3 +678,172 @@ body:not(.home-page) .case-information dt,body:not(.home-page) .case-information
     white-space:normal!important;
   }
 }
+
+
+/* PROJECT PAGE SYSTEM — shared title, introduction, and narrative type.
+   Homepage and Info pages are intentionally excluded. */
+body:not(.home-page):not(.info-page) .site-intro{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  column-gap:16px!important;
+  row-gap:0!important;
+  padding:0 40px 94px!important;
+}
+body:not(.home-page):not(.info-page) .site-intro-title{
+  grid-column:1/-1!important;
+  display:block!important;
+  min-height:0!important;
+  padding:172px 0 0!important;
+  margin:0!important;
+  align-items:initial!important;
+}
+body:not(.home-page):not(.info-page) .site-intro-title,
+body:not(.home-page):not(.info-page) .site-intro-title h1,
+body:not(.home-page):not(.info-page) main>.title h1,
+body:not(.home-page):not(.info-page) main>.intro h1,
+body:not(.home-page):not(.info-page) main>.selected-intro h1,
+body:not(.home-page):not(.info-page) main>.digital-case-heading h1,
+body:not(.home-page):not(.info-page) main>.case-heading h1{
+  font-family:"Questrial",sans-serif!important;
+  font-size:88px!important;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+  font-weight:400!important;
+}
+body:not(.home-page):not(.info-page) .site-intro-title h1{margin:0!important;max-width:none!important}
+body:not(.home-page):not(.info-page) .site-intro-rule{
+  grid-column:1/-1!important;
+  width:calc(100% + 80px)!important;
+  margin:116px -40px 30px!important;
+  border:0!important;
+  border-top:1px solid var(--ink)!important;
+}
+body:not(.home-page):not(.info-page) .site-intro-meta{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:20px!important;
+  font-family:"Questrial",sans-serif!important;
+  font-size:16px!important;
+  line-height:1.25!important;
+}
+body:not(.home-page):not(.info-page) .site-intro-meta-one{grid-column:1!important}
+body:not(.home-page):not(.info-page) .site-intro-meta-two{grid-column:2!important}
+body:not(.home-page):not(.info-page) .site-intro-meta dl{margin:0!important;display:grid!important;gap:2px!important}
+body:not(.home-page):not(.info-page) .site-intro-meta dt,
+body:not(.home-page):not(.info-page) .site-intro-meta dd{font-size:16px!important;line-height:1.25!important;font-weight:400!important}
+body:not(.home-page):not(.info-page) .site-intro-description{
+  grid-column:3/5!important;
+  max-width:none!important;
+  margin:0!important;
+}
+body:not(.home-page):not(.info-page) .site-intro-description p{margin:0!important}
+body:not(.home-page):not(.info-page) .site-intro-description p+p{margin-top:.8em!important}
+
+/* Legacy title wrappers resolve to the same 88px desktop title and 172px top offset. */
+body:not(.home-page):not(.info-page) main>.title,
+body:not(.home-page):not(.info-page) main>.intro,
+body:not(.home-page):not(.info-page) main>.selected-intro,
+body:not(.home-page):not(.info-page) main>.digital-case-heading,
+body:not(.home-page):not(.info-page) main>.case-heading{
+  padding:172px 40px 0!important;
+  margin:0!important;
+  min-height:0!important;
+  border:0!important;
+}
+body:not(.home-page):not(.info-page) main>.title h1,
+body:not(.home-page):not(.info-page) main>.intro h1,
+body:not(.home-page):not(.info-page) main>.selected-intro h1,
+body:not(.home-page):not(.info-page) main>.digital-case-heading h1,
+body:not(.home-page):not(.info-page) main>.case-heading h1{margin:0!important;max-width:none!important}
+body:not(.home-page):not(.info-page) main>.project-overview,
+body:not(.home-page):not(.info-page) main>.case-information{
+  margin:116px 0 0!important;
+  padding:0 40px 94px!important;
+}
+body:not(.home-page):not(.info-page) main>.project-overview:before,
+body:not(.home-page):not(.info-page) main>.case-information:before{
+  content:"";
+  grid-column:1/-1;
+  border-top:1px solid var(--ink);
+  margin:0 -40px 30px;
+}
+
+/* Consistent 16px narrative copy and regular-weight section labels. */
+body:not(.home-page):not(.info-page) .template-copy,
+body:not(.home-page):not(.info-page) .template-copy p,
+body:not(.home-page):not(.info-page) .digital-case-note,
+body:not(.home-page):not(.info-page) .digital-case-note p,
+body:not(.home-page):not(.info-page) .page-copy,
+body:not(.home-page):not(.info-page) .page-copy p,
+body:not(.home-page):not(.info-page) .gallery-note,
+body:not(.home-page):not(.info-page) .gallery-note p,
+body:not(.home-page):not(.info-page) .info-copy,
+body:not(.home-page):not(.info-page) .info-copy p,
+body:not(.home-page):not(.info-page) .site-intro-description,
+body:not(.home-page):not(.info-page) .site-intro-description p,
+body:not(.home-page):not(.info-page) .project-overview .overview-description,
+body:not(.home-page):not(.info-page) .project-overview .overview-description p{
+  font-family:"Questrial",sans-serif!important;
+  font-size:16px!important;
+  line-height:1.45!important;
+  font-weight:400!important;
+}
+body:not(.home-page):not(.info-page) .template-copy p,
+body:not(.home-page):not(.info-page) .digital-case-note p,
+body:not(.home-page):not(.info-page) .page-copy p,
+body:not(.home-page):not(.info-page) .gallery-note p,
+body:not(.home-page):not(.info-page) .info-copy p,
+body:not(.home-page):not(.info-page) .site-intro-description p,
+body:not(.home-page):not(.info-page) .project-overview .overview-description p{margin:0!important}
+body:not(.home-page):not(.info-page) .template-copy p+p,
+body:not(.home-page):not(.info-page) .digital-case-note p+p,
+body:not(.home-page):not(.info-page) .page-copy p+p,
+body:not(.home-page):not(.info-page) .gallery-note p+p,
+body:not(.home-page):not(.info-page) .info-copy p+p,
+body:not(.home-page):not(.info-page) .site-intro-description p+p{margin-top:.8em!important}
+body:not(.home-page):not(.info-page) .template-copy h2,
+body:not(.home-page):not(.info-page) .digital-case-note h2,
+body:not(.home-page):not(.info-page) .page-copy h2,
+body:not(.home-page):not(.info-page) .gallery-note h2,
+body:not(.home-page):not(.info-page) .info-copy h2{
+  font-family:"Questrial",sans-serif!important;
+  font-size:16px!important;
+  line-height:1.3!important;
+  letter-spacing:0!important;
+  font-weight:400!important;
+  margin:0 0 12px!important;
+}
+
+@media(min-width:701px) and (max-width:1024px){
+  body:not(.home-page):not(.info-page) .site-intro-title{padding-top:150px!important}
+  body:not(.home-page):not(.info-page) .site-intro-title,
+  body:not(.home-page):not(.info-page) .site-intro-title h1,
+  body:not(.home-page):not(.info-page) main>.title h1,
+  body:not(.home-page):not(.info-page) main>.intro h1,
+  body:not(.home-page):not(.info-page) main>.selected-intro h1,
+  body:not(.home-page):not(.info-page) main>.digital-case-heading h1,
+  body:not(.home-page):not(.info-page) main>.case-heading h1{font-size:clamp(56px,8vw,72px)!important}
+}
+@media(max-width:700px){
+  body:not(.home-page):not(.info-page) .site-intro{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:0 20px 64px!important;column-gap:14px!important}
+  body:not(.home-page):not(.info-page) .site-intro-title{padding-top:140px!important}
+  body:not(.home-page):not(.info-page) .site-intro-title,
+  body:not(.home-page):not(.info-page) .site-intro-title h1,
+  body:not(.home-page):not(.info-page) main>.title h1,
+  body:not(.home-page):not(.info-page) main>.intro h1,
+  body:not(.home-page):not(.info-page) main>.selected-intro h1,
+  body:not(.home-page):not(.info-page) main>.digital-case-heading h1,
+  body:not(.home-page):not(.info-page) main>.case-heading h1{font-size:clamp(42px,9vw,64px)!important}
+  body:not(.home-page):not(.info-page) .site-intro-rule{width:calc(100% + 40px)!important;margin:72px -20px 24px!important}
+  body:not(.home-page):not(.info-page) .site-intro-meta-one{grid-column:1!important}
+  body:not(.home-page):not(.info-page) .site-intro-meta-two{grid-column:2!important}
+  body:not(.home-page):not(.info-page) .site-intro-description{grid-column:1/-1!important;margin-top:24px!important}
+  body:not(.home-page):not(.info-page) main>.title,
+  body:not(.home-page):not(.info-page) main>.intro,
+  body:not(.home-page):not(.info-page) main>.selected-intro,
+  body:not(.home-page):not(.info-page) main>.digital-case-heading,
+  body:not(.home-page):not(.info-page) main>.case-heading{padding:140px 20px 0!important}
+  body:not(.home-page):not(.info-page) main>.project-overview,
+  body:not(.home-page):not(.info-page) main>.case-information{margin-top:72px!important;padding:0 20px 64px!important}
+  body:not(.home-page):not(.info-page) main>.project-overview:before,
+  body:not(.home-page):not(.info-page) main>.case-information:before{margin:0 -20px 24px}
+}
