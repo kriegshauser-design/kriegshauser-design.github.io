@@ -14,7 +14,7 @@
 .windows-shop-case .digital-case-gallery{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(40px,8vw,100px) 16px;
+  gap:var(--image-gap-desktop);
   padding:0 var(--pad) 100px;
   align-items:start;
 }
@@ -37,7 +37,7 @@
   letter-spacing:0;
   margin:0 0 8px;
 }
-.windows-shop-case .digital-case-note p{font-size:16px;line-height:1.45}
+.windows-shop-case .digital-case-note p{font-size:16px;line-height:1.455}
 @media(max-width:700px){
   .windows-shop-case .digital-case-gallery{grid-template-columns:1fr;gap:40px;padding-bottom:64px}
   .windows-shop-case .digital-case-image,.windows-shop-case .digital-case-note{grid-column:1;width:100%}
