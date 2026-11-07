@@ -6,6 +6,10 @@
   --line:rgba(23,23,23,.22);
   --hover-bg:rgba(23,23,23,.05);
   --pad:40px;
+  --image-gap-desktop:40px;
+  --image-gap-mobile:20px;
+  --gallery-padding:var(--pad);
+  --section-space:clamp(80px,12vw,140px);
   --ease:cubic-bezier(.16,.84,.24,1);
   color-scheme:light;
   font-family:"Questrial",sans-serif;
@@ -41,14 +45,14 @@ a,button{transition:color .25s var(--ease),opacity .25s var(--ease)}
 .menu-toggle::before{transform:translateY(-7px)}.menu-toggle::after{transform:translateY(7px)}
 .bar.menu-open .menu-toggle span{opacity:0}.bar.menu-open .menu-toggle::before{transform:rotate(45deg)}.bar.menu-open .menu-toggle::after{transform:rotate(-45deg)}
 @media(max-width:1024px){.bar{grid-template-columns:1fr auto;align-items:start}.menu-toggle{display:inline-flex}.nav{display:none;position:fixed;inset:0;z-index:30;background:var(--bg);padding:calc(var(--pad)*4 + env(safe-area-inset-top,0px)) var(--pad) var(--pad);overflow:auto;flex-direction:column;gap:0;justify-content:flex-start;align-items:stretch}.bar.menu-open .nav{display:flex}.nav>.dd,.nav>a{border-top:1px solid var(--line);padding:16px 0}.nav>.dd>button{width:100%;justify-content:space-between}.nav>a{font-size:16px!important}}
-footer{background:var(--bg);padding:0 var(--pad) clamp(32px,5vw,64px);display:grid;grid-template-columns:1fr;gap:0;font-family:"Questrial",sans-serif}
-footer .contact-kicker{border-top:1px solid var(--line);margin:0 calc(-1 * var(--pad));padding:clamp(56px,8vw,112px) var(--pad) 0;font-size:10px;line-height:1.2;letter-spacing:.015em;text-transform:none;margin-bottom:18px}
-footer .contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:0}
-footer .contact-link{display:flex;align-items:flex-start;gap:7px;max-width:100%;font-size:clamp(28px,5.8vw,64px);line-height:1.02;letter-spacing:-.045em;text-transform:uppercase;overflow-wrap:anywhere}
-footer .contact-link .hint{font-size:9px;line-height:1.2;letter-spacing:0;white-space:nowrap;text-transform:none;transform:translateY(.12em)}
-footer .contact-link:hover{opacity:.65}
-footer .fine{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin:clamp(48px,8vw,100px) calc(-1 * var(--pad)) 0;padding:10px 20px 0;color:var(--muted);font-size:10px;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
-@media(max-width:700px){footer .contact-link{font-size:clamp(25px,8vw,42px)}footer .fine{flex-wrap:wrap}}
+.site-footer{background:var(--bg);padding:0 var(--pad) clamp(32px,5vw,64px);display:grid;grid-template-columns:1fr;gap:0;font-family:"Questrial",sans-serif}
+.site-footer .contact-kicker{border-top:1px solid var(--ink);margin:0 calc(-1 * var(--pad));padding:clamp(56px,8vw,112px) var(--pad) 0;font-size:16px;line-height:1.2;letter-spacing:0;text-transform:none;margin-bottom:18px}
+.site-footer .contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.site-footer .contact-link{display:flex;align-items:flex-start;gap:7px;max-width:100%;font-size:clamp(28px,5.8vw,64px);line-height:1.02;letter-spacing:-.045em;text-transform:uppercase;overflow-wrap:anywhere}
+.site-footer .contact-link .hint{font-size:9px;line-height:1.2;letter-spacing:0;white-space:nowrap;text-transform:none;transform:translateY(.12em)}
+.site-footer .contact-link:hover{opacity:.65}
+.site-footer .fine{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--ink);margin:clamp(48px,8vw,100px) calc(-1 * var(--pad)) 0;padding:10px var(--pad) 0;color:var(--muted);font-size:12px;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
+@media(max-width:700px){.site-footer .contact-link{font-size:clamp(25px,8vw,42px)}.site-footer .fine{flex-wrap:wrap;font-size:12px}}
 
 
 /* Global design tokens and base styling, governed by the Redwood trial page. */
@@ -64,7 +68,7 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 /* Shared component details carried over from the Redwood trial page. */
 button,button *{font-size:15px}
 .nav a,.nav button,.nav .panel a,.nav .panel a span,.nav>.dd>button,.nav>a{font-size:16px!important}
-.case-image figcaption{margin-top:15px}
+
 
 
 /* Render portfolio content immediately; no staged image/text reveal animations. */
@@ -846,4 +850,75 @@ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .info-copy h2{
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main>.case-information{margin-top:72px!important;padding:0 20px 64px!important}
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main>.project-overview:before,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main>.case-information:before{margin:0 -20px 24px}
+}
+
+
+/* ------------------------------------------------------------------
+   SITE STYLESHEET ORGANIZATION — shared component refinements
+   ------------------------------------------------------------------ */
+/* 1. Design tokens and base styles: root tokens and foundational rules above. */
+/* 2. Navigation: shared .bar, .nav, .dd, .panel and menu-toggle rules above. */
+/* 3. Project introduction: shared .site-intro and legacy title mapping above. */
+/* 4. Project metadata: shared .site-intro-meta and overview rules above. */
+/* 5. Narrative typography: shared 16px copy and section-label rules above. */
+/* 6. Gallery layouts: common gallery rhythm and image captions below. */
+/* 7. Special gallery exceptions: masonry, event rows, video and offset/full-width layouts remain scoped. */
+/* 8. Footer: one shared .site-footer component; homepage and Info footers remain independent. */
+/* 9. Responsive rules: component-specific breakpoints are grouped with their owning component. */
+
+:root{
+  --caption-size:16px;
+  --caption-line-height:1.3;
+}
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .item figcaption,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-image figcaption,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-gallery figcaption,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-image figcaption{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  margin-top:12px;
+  margin-bottom:0;
+  color:var(--muted);
+  font-family:"Questrial",sans-serif;
+  font-size:var(--caption-size);
+  line-height:var(--caption-line-height);
+  font-weight:400;
+  text-align:left;
+}
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .item figcaption>*,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-image figcaption>*,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-gallery figcaption>*{
+  font:inherit;
+  text-align:inherit;
+}
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .gallery,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-gallery,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-gallery{
+  column-gap:var(--image-gap-desktop);
+  row-gap:var(--image-gap-desktop);
+}
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .gallery.pad,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-gallery,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-gallery{
+  padding-left:var(--gallery-padding);
+  padding-right:var(--gallery-padding);
+}
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .template-image,
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .wallpaper-image{margin-bottom:var(--section-space)}
+@media(max-width:700px){
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .gallery,
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-gallery,
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-gallery{
+   column-gap:10px;
+   row-gap:var(--image-gap-mobile);
+ }
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .gallery.pad,
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-gallery,
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-gallery{
+   padding-left:var(--gallery-padding);
+   padding-right:var(--gallery-padding);
+ }
+ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .video-item figcaption{font-size:16px!important;line-height:1.25!important}
 }
