@@ -1011,3 +1011,8 @@ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) footer.site-foote
     line-height:1.25!important;
   }
 }
+
+/* Sitewide page-title wrapping: keep every non-homepage H1 within half the page width. */
+body:not(.home-page) h1{
+  max-width:50vw!important;
+}
