@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<
-  <!-- Site icons: browser, Apple touch, and Android/PWA -->
-  <link rel="icon" href="/images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#faf6ed">
-
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- EDIT: title + description -->
-<title>Michael Kriegshauser — Creative Director</title>
-<meta name="description" content="Award-winning multidisciplinary design leader. Creative direction for IBM Quantum.">
+<title>Michael Kriegshauser — Practiced</title>
+<meta name="description" content="Michael Kriegshauser — Practiced creative director and designer. Helping big design teams deliver like a startup and small design teams deliver at scale.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
@@ -230,6 +222,9 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
     padding-right:20px!important;
   }
 }
+
+/* Review homepage: maintain exactly 172px between hero copy and first project. */
+.review-home .review-hero{height:auto;padding-bottom:172px}
 </style>
 <link rel="stylesheet" href="site.css">
 <style>
@@ -248,8 +243,48 @@ html.js .gallery>.item.done{will-change:auto}
   html.js .gallery>.item{opacity:1;transform:none;transition:none}
 }
 </style>
+<style>
+/* Alternate homepage concept for review — isolated from the live homepage. */
+.review-home{background:#faf6ed;color:#171717}
+.review-home .bar{background:#faf6ed;padding:24px 25px 12px;grid-template-columns:1fr auto;align-items:start;font-size:13px}
+.review-home .nav{gap:clamp(18px,3vw,46px);font-size:13px}
+.review-home .dd>button::after{width:4px;height:4px}
+.review-home .review-hero{height:700px;min-height:700px;padding:240px 25px 0;display:block}
+.review-home .review-headline,
+.review-home .review-hero p{width:50%;max-width:none}
+.review-home .review-headline{display:flex;align-items:flex-start;gap:clamp(6px,.7vw,10px);width:50%}
+.review-home .review-headline h1{font-family:"Questrial",sans-serif;font-size:clamp(42px,6.1vw,88px);line-height:.98;letter-spacing:-.045em;font-weight:400;white-space:nowrap;flex:0 0 88%;width:88%}
+.review-home .review-headline img{display:block;width:clamp(12px,1.46vw,21px);height:auto;margin-top:clamp(5px,.7vw,10px);flex:0 0 auto}
+.review-home .review-hero p{width:min(50%,560px);max-width:560px;margin-top:14px;font-size:clamp(16px,1.4vw,20px);line-height:1.32}
+.review-home .project{padding:0 25px 70px;border:0}
+.review-home .project .head{grid-template-columns:1fr 1fr 2fr;gap:16px;margin:0 0 8px;font-size:13px}
+.review-home .project .head h2{font-size:14px}
+.review-home .project .project-categories{font-size:12px}
+.review-home .project .gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.review-home .project .item figcaption{font-size:9px;margin-top:8px}
+.review-home .project .media{background:transparent}
+@media(max-width:1024px){
+ .review-home .bar{padding:20px}
+ .review-home .review-hero{height:620px;min-height:620px;padding:190px 20px 0}
+ .review-home .review-headline h1{font-size:clamp(54px,9vw,88px)}
+ .review-home .review-hero p{width:min(72%,560px)}
+ .review-home .project{padding-left:20px;padding-right:20px}
+ .review-home .project .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:768px){
+ .review-home .review-headline,
+ .review-home .review-hero p{width:100%}
+}
+@media(max-width:700px){
+ .review-home .review-hero{height:540px;min-height:540px;padding-top:150px}
+ .review-home .review-headline h1{font-size:clamp(38px,10.5vw,72px)}
+ .review-home .review-headline img{width:clamp(12px,3vw,18px);margin-top:5px}
+ .review-home .review-hero p{width:100%;font-size:18px;line-height:1.35;max-width:34ch}
+ .review-home .project .head{grid-template-columns:1fr;gap:4px}
+ .review-home .project .gallery{grid-template-columns:1fr;gap:18px}
+}</style>
 </head>
-<body class="home-page">
+<body class="home-page review-home">
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
@@ -263,7 +298,7 @@ html.js .gallery>.item.done{will-change:auto}
         <a href="hbcu-quantum-center-at-howard-university.html">HBCU Quantum Center </a>
         <a href="ibm-quantum-visual-identity.html">Quantum Visual Identity </a>
         <a href="ibm-systems-design-summit.html">Design Summit </a>
-        
+        <a href="ibm-quantum-system-two.html">Quantum System Two </a>
       </div>
     </div>
     <div class="dd">
@@ -282,17 +317,21 @@ html.js .gallery>.item.done{will-change:auto}
       <div class="panel">
 <a href="dell-universal-screen-fill.html">Dell Wallpaper Art Direction</a>
         <a href="Events-Places.html">Places and Events</a>
-        <a href="video-creative-direction.html">Video Direction</a>
+        <a href="video-creative-direction.html">Video</a>
         <a href="ibm-quantum-hardware-creative-direction.html">Quantum Hardware </a>
         <a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One </a>
-        <a href="ibm-quantum-system-two.html">Quantum System Two </a><a href="selected-designs.html">Selected Designs</a>
+        <a href="selected-designs.html">Selected Designs</a>
       </div>
     </div>
     <a href="Info.html">Info</a>
   </nav>
 </header>
 
-<main id="top"><section class="site-intro" aria-label="Portfolio introduction"><div class="site-intro-title"><h1>Multidisciplinary creative lead,<br>delivering measurable impact.</h1></div></section>
+<main id="top">
+<section class="review-hero" aria-label="Portfolio introduction">
+<div class="review-headline"><h1>PRACTICED</h1><img src="images/kriegs.svg" alt="" aria-hidden="true"></div>
+<p>Hi! I am Michael Kriegshauser, a practiced Creative Director and Designer. I help big design teams deliver like a startup and small design teams deliver at scale.</p>
+</section>
   <!-- EDIT: intro statement -->
   
 
@@ -352,6 +391,27 @@ html.js .gallery>.item.done{will-change:auto}
 
 <script>
 document.documentElement.classList.add('js');
+
+// Fit the PRACTICED word to 88% of its headline column at every viewport size.
+(function(){
+  var heading=document.querySelector('.review-headline h1');
+  var column=document.querySelector('.review-headline');
+  if(!heading||!column)return;
+  function fit(){
+    var style=getComputedStyle(heading);
+    var base=parseFloat(style.fontSize);
+    var canvas=document.createElement('canvas');
+    var ctx=canvas.getContext('2d');
+    ctx.font=style.fontWeight+' '+base+'px '+style.fontFamily;
+    var letterSpacing=parseFloat(style.letterSpacing)||0;
+    var measured=ctx.measureText(heading.textContent.trim()).width+letterSpacing*Math.max(0,heading.textContent.trim().length-1);
+    var target=column.clientWidth*.88;
+    if(measured>0)heading.style.fontSize=(base*target/measured)+'px';
+  }
+  if('ResizeObserver' in window)new ResizeObserver(fit).observe(column);
+  window.addEventListener('load',fit);
+  fit();
+})();
 
 // Dropdowns: click/tap toggles, outside click or Escape closes, only one open at a time
 (function(){
