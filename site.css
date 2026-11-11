@@ -1021,8 +1021,6 @@ body:not(.home-page) h1{
 /* PROJECT NARRATIVE SPACING — 160px desktop / 64px mobile.
    Applies to standalone narrative copy blocks only; gallery figures, captions,
    metadata, and the gallery's column/row gap tokens remain unchanged. */
-body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .site-intro-description,
-body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .project-overview .overview-description,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-copy,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .template-copy,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .wallpaper-copy,
@@ -1030,22 +1028,18 @@ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .page-copy,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .gallery-note,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .info-copy,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-note,
-body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information .info-copy,
 body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information .case-copy {
   margin-block:160px!important;
 }
 @media(max-width:700px){
-  body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .site-intro-description,
-  body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .project-overview .overview-description,
-  body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-copy,
+      body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-copy,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .template-copy,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .wallpaper-copy,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .page-copy,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .gallery-note,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .info-copy,
   body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .digital-case-note,
-  body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information .info-copy,
-  body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information .case-copy {
+    body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information .case-copy {
     margin-block:64px!important;
   }
 }
