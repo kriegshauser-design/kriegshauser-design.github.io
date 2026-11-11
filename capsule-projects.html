@@ -11,21 +11,12 @@
 <link rel="stylesheet" href="site.css">
 <style>
 .capsule-page{background:var(--bg);color:var(--ink)}
-.capsule-intro{padding:0 var(--pad)}
-.capsule-intro-title{min-height:263px;display:flex;align-items:flex-end;padding:0 0 28px}
-.capsule-intro-title h1{font-size:clamp(38px,5.1vw,64px);line-height:.98;letter-spacing:-.04em;font-weight:400}
-.capsule-intro-rule{width:calc(100% + 40px);margin:0 -20px 30px;border-top:1px solid var(--ink)}
-.capsule-intro-copy{max-width:52ch;margin:0 0 56px 50%;font-size:16px;line-height:1.45}
 .capsule-gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:40px 24px;padding:0 var(--pad);align-items:start}
 .capsule-tile{margin:0;min-width:0}
 .capsule-tile img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
 @media(max-width:1000px){.capsule-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 20px}}
 
 @media(max-width:700px){
- .capsule-intro-title{min-height:235px;padding-bottom:24px}
- .capsule-intro-title h1{font-size:clamp(36px,9vw,52px)}
- .capsule-intro-rule{margin-bottom:18px}
- .capsule-intro-copy{margin:0 0 36px;width:100%;max-width:42ch}
  .capsule-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}
 }
 @media(max-width:420px){.capsule-gallery{grid-template-columns:1fr;gap:24px}}
@@ -73,10 +64,10 @@
   </nav>
 </header>
 <main id="top">
-  <section class="capsule-intro" aria-label="Capsule Projects introduction">
-    <div class="capsule-intro-title"><h1>Capsule Projects</h1></div>
-    <div class="capsule-intro-rule"></div>
-    <p class="capsule-intro-copy">On occasion, I have the opportunity to take on small projects that allow me to explore personal and regional design sensibilities. This collection of independent explorations, visual experiments, and small projects lets me engage with new stakeholders and needs, and experience the design and marketing industry at all levels.</p>
+  <section class="site-intro" aria-label="Capsule Projects introduction">
+    <div class="site-intro-title"><h1>Capsule Projects</h1></div>
+    <div class="site-intro-rule"></div>
+    <div class="site-intro-description"><p>On occasion, I have the opportunity to take on small projects that allow me to explore personal and regional design sensibilities. This collection of independent explorations, visual experiments, and small projects lets me engage with new stakeholders and needs, and experience the design and marketing industry at all levels.</p></div>
   </section>
   <section class="capsule-gallery" aria-label="Capsule project image gallery">
     <figure class="capsule-tile"><img src="images/buffalo-mascot1.jpg" alt="Buffalo mascot illustration" loading="eager" fetchpriority="high" decoding="async"></figure>
