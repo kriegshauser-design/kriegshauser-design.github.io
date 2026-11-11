@@ -156,10 +156,10 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
 .home-page .head{
   display:grid;
-  grid-template-columns:1fr;
-  align-items:start;
-  justify-items:start;
-  gap:4px;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  justify-items:stretch;
+  gap:16px;
   margin:0 0 16px;
 }
 .home-page .head h2,
@@ -170,7 +170,7 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   font-weight:400;
 }
 .home-page .head .tags{display:none}
-.home-page .project-categories{justify-self:start;text-align:left;white-space:nowrap;color:var(--ink)}
+.home-page .project-categories{grid-column:2;justify-self:end;text-align:right;white-space:nowrap;color:var(--ink)}
 .home-page .gallery{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -190,7 +190,7 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   .home-page .site-intro{padding-bottom:64px}
   .home-page .project{padding:0 20px 56px}
   .home-page .head{grid-template-columns:1fr;gap:4px;margin-bottom:12px}
-  .home-page .project-categories{justify-self:start;text-align:left;white-space:normal}
+  .home-page .project-categories{grid-column:1;justify-self:end;text-align:right;white-space:normal}
   .home-page .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 }
 @media(max-width:480px){
