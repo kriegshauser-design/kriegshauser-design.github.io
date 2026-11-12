@@ -273,6 +273,44 @@ html.js .gallery>.item.done{will-change:auto}
 }
 </style>
 <style>
+/* PRACTICED definition component above the footer. */
+.practiced-definition{
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  padding:160px var(--pad);
+}
+.practiced-definition-inner{
+  width:min(100%,960px);
+  margin-left:auto;
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr);
+  align-items:start;
+  column-gap:40px;
+}
+.practiced-definition-inner p{
+  margin:0;
+  font-family:"Questrial",Helvetica,Arial,sans-serif;
+  font-size:40px;
+  line-height:1.28;
+  font-weight:400;
+  letter-spacing:-.025em;
+}
+.practiced-definition-mark{
+  display:block;
+  width:48px;
+  height:70px;
+  margin-top:5px;
+  background:#e33627;
+  clip-path:polygon(27% 0,100% 0,39% 50%,100% 100%,27% 100%,0 50%);
+}
+.site-footer{border-top:0!important}
+@media(max-width:700px){
+  .practiced-definition{padding:96px 20px}
+  .practiced-definition-inner{grid-template-columns:28px minmax(0,1fr);column-gap:18px}
+  .practiced-definition-inner p{font-size:clamp(22px,5.2vw,32px);line-height:1.25}
+  .practiced-definition-mark{width:26px;height:40px;margin-top:3px}
+}
+
 /* Alternate homepage concept for review — isolated from the live homepage. */
 .review-home{background:#ffffff;color:#171717}
 .review-home main,.review-home .review-hero,.review-home .project{background-color:#ffffff}
@@ -439,6 +477,13 @@ html.js .gallery>.item.done{will-change:auto}
     </div>
   </article>
 </main>
+
+<section class="practiced-definition" aria-label="Definition of practiced">
+  <div class="practiced-definition-inner">
+    <span class="practiced-definition-mark" aria-hidden="true"></span>
+    <p>Experienced, skilled, proficient, or expert at something as a result of doing it many times. It can also describe a skill or habit that has been learned, acquired, or perfected through repetition.</p>
+  </div>
+</section>
 
 <!-- EDIT: contact + links -->
 <footer id="contact" class="site-footer"><div class="contact-kicker">Contact</div><div class="contact-links"><a class="contact-link" href="tel:+15129230607">+1 512 923 0607</a><a class="contact-link" href="mailto:heykriegs@gmail.com">HEYKRIEGS@GMAIL.COM</a><a class="contact-link" href="https://www.instagram.com/heykriegs/">Instagram</a><a class="contact-link" href="https://www.linkedin.com/in/heykriegs">LinkedIn</a></div><div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#top">Back to Top ↑</a></div></footer>
