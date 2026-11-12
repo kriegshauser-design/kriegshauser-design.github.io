@@ -1043,3 +1043,9 @@ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information
     margin-block:64px!important;
   }
 }
+
+/* Homepage navigation standard: shared position, spacing, and dropdown indicator. */
+.bar{padding:24px 25px 12px!important}
+.nav{gap:clamp(18px,3vw,46px)!important}
+.dd>button::after{width:4px!important;height:4px!important}
+@media(max-width:1024px){.bar{padding:20px!important}}
