@@ -1049,3 +1049,13 @@ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) .case-information
 .nav{gap:clamp(18px,3vw,46px)!important}
 .dd>button::after{width:4px!important;height:4px!important}
 @media(max-width:1024px){.bar{padding:20px!important}}
+
+/* PROJECT PAGE HEADLINE WRAPPING — approximately 17 characters per line.
+   Natural word wrapping only; never split or hyphenate words. */
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main h1{
+  width:min(17ch,calc(100vw - 40px))!important;
+  max-width:17ch!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
