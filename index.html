@@ -233,6 +233,9 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 .review-home .review-hero{height:auto;padding-bottom:172px}
 
 /* Capsule Projects preview: five images across on desktop. */
+/* Show only the first five Capsule Projects images on the homepage preview. */
+.home-page #project-capsule .gallery>.item:nth-child(n+6){display:none!important}
+
 .home-page #project-capsule .gallery{grid-template-columns:repeat(5,minmax(0,1fr))!important;column-gap:20px!important;row-gap:24px!important}
 @media(max-width:1024px){.home-page #project-capsule .gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media(max-width:700px){.home-page #project-capsule .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
