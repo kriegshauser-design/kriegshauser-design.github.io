@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <!-- EDIT: title + description -->
 <title>Michael Kriegshauser — Practiced</title>
 <meta name="description" content="Michael Kriegshauser — Practiced creative director and designer. Helping big design teams deliver like a startup and small design teams deliver at scale.">
@@ -226,6 +231,12 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
 /* Review homepage: maintain exactly 172px between hero copy and first project. */
 .review-home .review-hero{height:auto;padding-bottom:172px}
+
+/* Capsule Projects preview: five images across on desktop. */
+.home-page #project-capsule .gallery{grid-template-columns:repeat(5,minmax(0,1fr))!important;column-gap:20px!important;row-gap:24px!important}
+@media(max-width:1024px){.home-page #project-capsule .gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:700px){.home-page #project-capsule .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:480px){.home-page #project-capsule .gallery{grid-template-columns:1fr!important}}
 </style>
 <link rel="stylesheet" href="site.css">
 <style>
