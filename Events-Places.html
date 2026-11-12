@@ -104,13 +104,13 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 .media,.item.wide .media,.item.third .media,.item.tall .media,.item.full .media,.case-gallery .media{aspect-ratio:auto!important;height:auto!important;overflow:visible;background:transparent}
 .media img,.media video,.case-gallery .media img,.case-gallery .media video{position:relative!important;inset:auto!important;display:block;width:100%;height:auto!important;max-width:100%;object-fit:contain!important;object-position:center;}
 
-/* Events and Places: four-up project rows, following the homepage project-heading treatment. */
+/* Events and Places: three-up project rows, following the homepage project-heading treatment. */
 .events-project-list{padding:0 var(--pad) calc(var(--pad)*3)}
 .events-row{padding:0 0 calc(var(--pad)*2);margin:0 0 calc(var(--pad)*2);border-bottom:1px solid var(--line)}
 .events-row-head{display:grid;grid-template-columns:1fr auto;align-items:start;gap:16px;margin:0 0 16px}
 .events-row-head h2,.events-row-head p{font:inherit;line-height:1.2}
 .events-row-head p{color:var(--mute);text-align:right}
-.events-row-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pad)}
+.events-row-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--pad)}
 .events-row-gallery .item{grid-column:auto!important;min-width:0}
 .events-row-gallery .item .media,
 .events-row-gallery .item.full .media,
