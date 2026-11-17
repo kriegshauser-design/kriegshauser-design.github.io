@@ -123,8 +123,36 @@ button * {
 }
 </style>
 <link rel="stylesheet" href="site.css">
+<style>
+/* Quantum Brand Evolution follows the Digital/Product case-study narrative layout. */
+.qbe-case .digital-case-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--image-gap-desktop);
+  padding:0 var(--pad) 100px;
+  align-items:start;
+}
+.qbe-case .digital-case-image{grid-column:1/-1;margin:0;min-width:0}
+.qbe-case .digital-case-image .media{width:100%;height:auto;overflow:hidden;background:transparent;padding:0}
+.qbe-case .digital-case-image img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.qbe-case .digital-case-note{
+  grid-column:1/-1;width:50%;max-width:54ch;padding:0;margin:0;
+  justify-self:start;align-self:start;
+}
+.qbe-case .digital-case-note h2{
+  font-size:16px;font-weight:400;line-height:1.2;letter-spacing:0;margin:0 0 8px;
+}
+.qbe-case .digital-case-note p{font-size:16px;line-height:1.455}
+.qbe-case .digital-case-note p+p{margin-top:1em}
+.qbe-case .digital-case-note ul{padding-left:1.2em;margin-top:.8em}
+.qbe-case .digital-case-note li{font-size:16px;line-height:1.455;margin:.35em 0}
+@media(max-width:700px){
+  .qbe-case .digital-case-gallery{grid-template-columns:1fr;gap:40px;padding-bottom:64px}
+  .qbe-case .digital-case-image,.qbe-case .digital-case-note{grid-column:1;width:100%}
+}
+</style>
 </head>
-<body>
+<body class="digital-product-case qbe-case">
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
@@ -177,16 +205,62 @@ button * {
   
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
-  <section class="gallery pad">
-      <figure class="item full"><div class="media"><img src="/images/4b98bc73-15de-45a2-8015-008cabb8a78f_rw_1920.png" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>QBE_01</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/f05b3b7b-509f-49e0-b265-27659a4150b8_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_02</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/327a617e-5277-4752-a85d-28c2c885412b_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_03</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/8a063213-a190-4280-b658-b45ca1ef4fae_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_04</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/1494fc86-bf96-4651-9dac-53f66fd83b35_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_05</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/c6f66664-9cb3-4170-9e99-c0219bd3d36f_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_06</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/4c8224d7-9f62-4f36-9f67-e5d65bbbfbd7_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_07</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/b042fc88-57a0-4a6b-aa15-11d5c0a084bd_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_08</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/3c1f30a4-0e17-44e8-96e6-7b4a8aa2aa6b_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_09</span></figcaption></figure>
+  <section class="digital-case-gallery" aria-label="IBM Quantum Brand Evolution case study">
+    <figure class="digital-case-image lead-image"><div class="media"><img src="/images/4b98bc73-15de-45a2-8015-008cabb8a78f_rw_1920.png" alt="" loading="eager" fetchpriority="high" decoding="async"></div><figcaption><span>QBE_01</span></figcaption></figure>
+
+    <div class="digital-case-note">
+      <h2>Challenge</h2>
+      <p>IBM Quantum was moving from a research project to a business unit focused on delivering value to customers and stakeholders. The brand needed to show this change while keeping the innovation and scientific ambition that defined the organization.</p>
+      <p>The challenge was to create a clear, business-focused identity that brought together classical and quantum computing. By refocusing brand positioning, voice, and visual identity, we built a brand that brought IBM Quantum into the IBM brand while positioning us as the leader in quantum computing.</p>
+    </div>
+
+    <figure class="digital-case-image"><div class="media"><img src="/images/f05b3b7b-509f-49e0-b265-27659a4150b8_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_02</span></figcaption></figure>
+
+    <div class="digital-case-note">
+      <h2>Problem</h2>
+      <p>Quantum computing had long been understood as a future-facing research discipline—complex, largely unfamiliar, and removed from the realities of commercial application. As IBM Quantum moved toward business readiness, its existing brand no longer fully reflected the organization's ambitions or its emerging value to customers.</p>
+      <p>A new brand was needed to communicate this shift. It had to establish credibility with scientists, engineers, and industry stakeholders while making an inherently complex technology more approachable to new audiences.</p>
+      <p>The challenge was not simply to explain quantum computing. It was to position IBM Quantum as a credible business, capable of translating scientific innovation into meaningful outcomes.</p>
+    </div>
+
+    <figure class="digital-case-image"><div class="media"><img src="/images/327a617e-5277-4752-a85d-28c2c885412b_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_03</span></figcaption></figure>
+
+    <div class="digital-case-note">
+      <h2>Approach</h2>
+      <p>We began with an extensive series of stakeholder interviews, using the findings to develop a rigorous project brief. The brief established the strategic foundation for the work and went through several rounds of review and refinement to align business priorities, stakeholder expectations, and creative ambitions.</p>
+      <p>From there, we organized the work around three interconnected disciplines:</p>
+      <ul>
+        <li><strong>Brand Positioning:</strong> Establish a clear position that connected IBM Quantum's scientific leadership to its emerging commercial value.</li>
+        <li><strong>Brand Voice:</strong> Develop a tone that balanced technical credibility with clarity, accessibility, and a forward-looking perspective.</li>
+        <li><strong>Visual Identity:</strong> Create a distinctive visual language that expressed quantum phenomena while remaining grounded in the IBM brand.</li>
+      </ul>
+      <p>We used an iterative process, establishing an initial brand position early through a collaborative workshop. Design exploration then became a means of testing and refining the strategy. Each critical review served two purposes: evaluating the creative work and validating the underlying brief and brand position.</p>
+      <p>This approach kept strategy and design connected throughout the process, allowing the identity to evolve alongside a clearer understanding of the organization's needs.</p>
+    </div>
+
+    <figure class="digital-case-image"><div class="media"><img src="/images/8a063213-a190-4280-b658-b45ca1ef4fae_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_04</span></figcaption></figure>
+    <figure class="digital-case-image"><div class="media"><img src="/images/1494fc86-bf96-4651-9dac-53f66fd83b35_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_05</span></figcaption></figure>
+
+    <div class="digital-case-note">
+      <h2>Outcome</h2>
+      <p>The resulting identity drew on established IBM brand standards and underutilized visual elements to create a system that was unmistakably IBM while distinctively its own.</p>
+      <p>Expressive interpretations of quantum phenomena gave the brand a more energetic and accessible character. The resulting system communicated the sophistication of the technology while making the organization more approachable to prospective customers, partners, and audiences new to quantum computing.</p>
+      <p>The work was strongly embraced by IBM Quantum leadership and broadly adopted by stakeholders.</p>
+    </div>
+
+    <figure class="digital-case-image"><div class="media"><img src="/images/c6f66664-9cb3-4170-9e99-c0219bd3d36f_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_06</span></figcaption></figure>
+    <figure class="digital-case-image"><div class="media"><img src="/images/4c8224d7-9f62-4f36-9f67-e5d65bbbfbd7_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_07</span></figcaption></figure>
+
+    <div class="digital-case-note">
+      <h2>Where Leadership Mattered</h2>
+      <p>Delivering this work required more than creative direction. It depended on having the right design organization in place to address a complex, cross-disciplinary challenge.</p>
+      <p>As part of my broader leadership of the IBM Quantum design program, I helped shape the team's staffing and organizational structure to better support the business's needs.</p>
+      <p>Rather than relying exclusively on IBM's traditional, highly matrixed model of specialized design teams, we moved toward a structure better suited to the demands of an emerging technology business and its evolving brand.</p>
+      <p>That organizational foundation positioned the team to work across strategy, brand, and execution—bringing the necessary disciplines closer together and creating the conditions for a more integrated creative process.</p>
+    </div>
+
+    <figure class="digital-case-image"><div class="media"><img src="/images/b042fc88-57a0-4a6b-aa15-11d5c0a084bd_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_08</span></figcaption></figure>
+    <figure class="digital-case-image"><div class="media"><img src="/images/3c1f30a4-0e17-44e8-96e6-7b4a8aa2aa6b_rw_1920.png" alt="" loading="lazy" decoding="async"></div><figcaption><span>QBE_09</span></figcaption></figure>
   </section>
 
   <!-- EDIT: next project link -->
