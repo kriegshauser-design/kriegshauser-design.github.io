@@ -1059,3 +1059,33 @@ body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main h1{
   word-break:normal!important;
   hyphens:none!important;
 }
+
+
+/* BODY CONTENT — keep exactly 160px between preceding media/content and each
+   narrative section heading. This deliberately excludes the site introduction,
+   navigation, and footer. */
+body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main :is(
+  .template-copy,
+  .case-copy,
+  .wallpaper-copy,
+  .page-copy,
+  .gallery-note,
+  .info-copy,
+  .digital-case-note
+):has(> h2){
+  margin-top:0!important;
+  padding-top:160px!important;
+}
+@media(max-width:700px){
+  body:not(.home-page):not(.info-page):not(:has(.portrait-wrap)) main :is(
+    .template-copy,
+    .case-copy,
+    .wallpaper-copy,
+    .page-copy,
+    .gallery-note,
+    .info-copy,
+    .digital-case-note
+  ):has(> h2){
+    padding-top:160px!important;
+  }
+}
