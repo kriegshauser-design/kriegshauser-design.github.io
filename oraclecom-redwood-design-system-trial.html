@@ -115,6 +115,47 @@
 .oracle-gallery .image-pair{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,24px);align-items:start}
 .oracle-gallery .image-pair .case-image{width:100%;min-width:0}
 @media(max-width:700px){.oracle-gallery{row-gap:26px}.oracle-gallery .narrative-section{width:72%;padding-top:134px}.oracle-gallery .image-pair{gap:8px}}
+
+/* Oracle trial: make every project image span the full gallery content width. */
+.oracle-gallery{
+  grid-template-columns:minmax(0,1fr)!important;
+}
+.oracle-gallery>.case-image,
+.oracle-gallery>.case-image.wide-image,
+.oracle-gallery>.case-image.pair-image,
+.oracle-gallery>.case-image.third-image{
+  grid-column:1/-1!important;
+  width:100%!important;
+  max-width:none!important;
+  justify-self:stretch!important;
+}
+.oracle-gallery>.case-image .media,
+.oracle-gallery>.image-pair .case-image .media{
+  width:100%!important;
+  max-width:none!important;
+  padding:0!important;
+}
+.oracle-gallery>.case-image img,
+.oracle-gallery>.image-pair .case-image img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+.oracle-gallery>.image-pair{
+  grid-column:1/-1!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  width:100%!important;
+  gap:clamp(20px,3vw,40px)!important;
+}
+.oracle-gallery>.image-pair>.case-image{
+  grid-column:1/-1!important;
+  width:100%!important;
+  max-width:none!important;
+}
+
 </style></head>
 <body>
 
