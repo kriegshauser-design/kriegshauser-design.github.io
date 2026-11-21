@@ -156,6 +156,30 @@
   max-width:none!important;
 }
 
+
+/* Force Groups 28 and 29 to full gallery width individually. */
+.oracle-gallery>.image-pair>.case-image,
+.oracle-gallery>.image-pair>.case-image.pair-image,
+.oracle-gallery>.image-pair>.case-image.framed{
+  grid-column:1/-1!important;
+  width:100%!important;
+  max-width:none!important;
+  justify-self:stretch!important;
+}
+.oracle-gallery>.image-pair{
+  grid-template-columns:minmax(0,1fr)!important;
+}
+.oracle-gallery>.image-pair>.case-image .media{
+  width:100%!important;
+  padding:0!important;
+}
+.oracle-gallery>.image-pair>.case-image img{
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+
 </style></head>
 <body>
 
